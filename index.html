@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drew Cox Web Design — Custom Websites for Local Businesses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --blue: #1d4ed8;
+      --blue-soft: #dbeafe;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --emerald: #047857;
+      --emerald-soft: #d1fae5;
+      --teal: #0369a1;
+      --teal-soft: #e0f2fe;
+      --cta: #ea580c;
+      --cta-hover: #c2410c;
+      --ink: #0f172a;
+      --muted: #475569;
+      --border: #cbd5e1;
+      --border-dark: #0f172a;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    /* VIEW SWITCHING */
+    .page-view { display: none; min-height: 100vh; }
+    .page-view.active-view { display: block; }
+
+    /* ==========================================
+       MAIN PORTFOLIO HOMEPAGE STYLES
+       ========================================== */
+    .top-nav {
+      background: var(--navy);
+      color: #fff;
+      padding: 16px 24px;
+      border-bottom: 3px solid var(--cta);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-Group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-Group h1 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .badge-loc {
+      background: var(--cta);
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-links .nav-cta {
+      background: #fff;
+      color: var(--navy);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* HERO BANNER */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #fff;
+      padding: 48px 24px;
+      border-bottom: 2px solid var(--border-dark);
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-family: var(--serif);
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 400;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 16.5px;
+      color: #cbd5e1;
+      max-width: 60ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-solid-orange {
+      background: var(--cta);
+      color: #fff;
+      padding: 13px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 2px solid #fff;
+      text-decoration: none;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .btn-solid-orange:hover { background: var(--cta-hover); }
+
+    .btn-solid-white {
+      background: #fff;
+      color: var(--navy);
+      padding: 13px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 2px solid #fff;
+      text-decoration: none;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .hero-highlights {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 10px;
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hl-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+
+    .hl-icon {
+      background: var(--cta);
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: grid;
+      gap: 48px;
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    .section-header .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-header h3 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 6px;
+      max-width: 68ch;
+    }
+
+    /* 4-SITE SHOWCASE CARDS */
+    .ai-notice {
+      background: #fffbeb;
+      border: 2px solid #f59e0b;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #78350f;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .site-card {
+      background: var(--surface);
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 5px 5px 0px var(--border-dark);
+    }
+
+    .site-card-banner {
+      padding: 18px 20px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .banner-taylor { background: linear-gradient(135deg, #1e3a8a, #2563eb); }
+    .banner-concrete { background: linear-gradient(135deg, #27272a, #ca8a04); }
+    .banner-lawn { background: linear-gradient(135deg, #14532d, #16a34a); }
+    .banner-wash { background: linear-gradient(135deg, #0c4a6e, #0284c7); }
+
+    .site-card-banner h4 {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .site-card-banner .price-pill {
+      background: #fff;
+      color: var(--navy);
+      font-family: var(--serif);
+      font-size: 20px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .site-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .site-badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag-real {
+      background: #dcfce7;
+      color: #166534;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .tag-ai {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .tag-spec {
+      background: #e2e8f0;
+      color: #1e293b;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .site-card-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .what-you-get {
+      list-style: none;
+      display: grid;
+      gap: 5px;
+      font-size: 13.5px;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .what-you-get li::before {
+      content: "✓ ";
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .site-card-actions {
+      padding: 14px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-preview {
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-preview:hover { opacity: 0.92; }
+
+    .btn-use-quote {
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btn-use-quote:hover { background: var(--blue-soft); }
+
+    /* SIMPLE PRICING & MAINTENANCE SECTION */
+    .tiers-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .tier-box {
+      background: var(--surface);
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 4px 4px 0px var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .tier-box.featured {
+      border-color: var(--blue);
+      box-shadow: 5px 5px 0px var(--blue);
+      background: #f8fbff;
+    }
+
+    .tier-top h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .tier-top .big-price {
+      font-family: var(--serif);
+      font-size: 34px;
+      color: var(--blue);
+      margin: 4px 0;
+    }
+
+    .tier-top p {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .plain-list {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      font-size: 13.5px;
+    }
+
+    .plain-list li::before {
+      content: "✓ ";
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .maint-banner {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      border: 2px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .maint-banner h4 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .maint-banner p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .maint-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .m-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .m-card strong {
+      display: block;
+      font-size: 16px;
+      color: #fbbf24;
+      margin-bottom: 4px;
+    }
+
+    .m-card span {
+      font-size: 12.5px;
+      color: #e2e8f0;
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* BUILDER + INTAKE WORKSPACE */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 5.5fr 6.5fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel-card {
+      background: var(--surface);
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 5px 5px 0px var(--border-dark);
+    }
+
+    .panel-card h4 {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .panel-sub {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step-box {
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .step-help {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .page-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .p-btn {
+      border: 2px solid var(--border);
+      background: #f8fafc;
+      padding: 10px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .p-btn span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .p-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .p-btn.active span { color: #dbeafe; }
+
+    .slider-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .slider-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+    }
+
+    .slider-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .slider-val { color: var(--blue); }
+    input[type="range"] { width: 100%; accent-color: var(--blue); cursor: pointer; }
+    .slider-explain { font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+
+    .addon-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .addon-row {
+      border: 2px solid var(--border);
+      background: #f8fafc;
+      border-radius: 6px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .addon-row:hover { border-color: var(--blue); }
+
+    .addon-row.active {
+      background: var(--blue-soft);
+      border-color: var(--blue);
+    }
+
+    .addon-text strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--navy);
+    }
+
+    .addon-text span {
+      font-size: 12px;
+      color: var(--muted);
+      display: block;
+    }
+
+    .addon-price {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--blue);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    /* RECEIPT SUMMARY */
+    .receipt-box {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .receipt-items {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .r-row {
+      display: flex;
+      justify-content: space-between;
+      color: #e2e8f0;
+    }
+
+    .r-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .r-total-row span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    .r-total-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      color: #fbbf24;
+      line-height: 1;
+    }
+
+    .r-care-note {
+      font-size: 12px;
+      color: #93c5fd;
+      margin-top: 6px;
+    }
+
+    /* FORM FIELDS */
+    .intake-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .f-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .f-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .f-group small {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid var(--border-dark);
+      border-radius: 6px;
+      background: #fff;
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--ink);
+    }
+
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      outline: none;
+      border-color: var(--cta);
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.18);
+    }
+
+    .f-group textarea {
+      min-height: 68px;
+      resize: vertical;
+    }
+
+    .submit-area {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .btn-submit-main {
+      background: var(--cta);
+      color: #fff;
+      border: 2px solid var(--border-dark);
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px var(--border-dark);
+      transition: background 0.15s;
+    }
+
+    .btn-submit-main:hover { background: var(--cta-hover); }
+
+    .btn-submit-main:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-copy-sec {
+      background: var(--navy);
+      color: #fff;
+      border: 2px solid var(--border-dark);
+      padding: 11px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* SUBMISSION STATUS MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #fff;
+      border: 3px solid var(--navy);
+      border-radius: 12px;
+      max-width: 520px;
+      width: 100%;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 8px 8px 0px var(--navy);
+      animation: popIn 0.2s ease-out;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-card .icon-check {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #d1fae5;
+      color: #047857;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-weight: 700;
+    }
+
+    .modal-card h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .modal-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 20px;
+    }
+
+    .modal-card .submitted-summary {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: left;
+      font-size: 13.5px;
+      margin-bottom: 24px;
+      display: grid;
+      gap: 6px;
+    }
+
+    /* DEMO SITES */
+    .demo-return-bar {
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 20px;
+      border-bottom: 3px solid #f59e0b;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .demo-return-bar .left-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .demo-pill-ai {
+      background: #f59e0b;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .demo-bar-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-back-home {
+      background: #fff;
+      color: #0f172a;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 12.5px;
+      cursor: pointer;
+    }
+
+    .btn-pick-this {
+      background: #ea580c;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 12.5px;
+      cursor: pointer;
+    }
+
+    .demo-site-header {
+      padding: 20px 24px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .demo-nav-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .demo-tab-btn {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .demo-tab-btn.active-tab {
+      background: #fff;
+      color: #0f172a;
+    }
+
+    .demo-subpage { display: none; }
+    .demo-subpage.active-subpage { display: block; }
+
+    .demo-hero {
+      padding: 54px 24px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .demo-hero h2 {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .demo-hero p {
+      font-size: 17px;
+      max-width: 60ch;
+      margin: 0 auto 24px;
+      opacity: 0.92;
+    }
+
+    .demo-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .demo-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .demo-card {
+      background: #fff;
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .demo-card h4 {
+      font-family: var(--serif);
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .demo-calc-box {
+      background: #fff;
+      border: 3px solid #0f172a;
+      border-radius: 10px;
+      padding: 28px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 6px 6px 0px #0f172a;
+    }
+
+    @media (max-width: 960px) {
+      .hero-inner,
+      .showcase-grid,
+      .tiers-row,
+      .maint-banner,
+      .workspace-grid,
+      .demo-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .f-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================
+       VIEW 1: DREW COX MAIN PORTFOLIO & QUOTE HOMEPAGE
+       ================================================================= -->
+  <div id="view-home" class="page-view active-view">
+    <nav class="top-nav">
+      <div class="top-nav-inner">
+        <div class="brand-Group">
+          <h1>Drew Cox Web Design</h1>
+          <span class="badge-loc">McComb & South MS</span>
+        </div>
+        <div class="nav-links">
+          <a href="#showcase-sec">See Sample Websites</a>
+          <a href="#pricing-sec">Simple Pricing</a>
+          <a href="#builder-sec" class="nav-cta">Build Your Quote & Order →</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h2>Clean, Fast Websites Built for Local Businesses.</h2>
+          <p>No confusing tech talk or $2,000 agency bills. Click through the example websites below to see what you like, build your exact price in 60 seconds, and fill out the short form to start your build.</p>
+          <div class="hero-btns">
+            <a href="#showcase-sec" class="btn-solid-orange">Click Through Example Sites ↓</a>
+            <a href="#builder-sec" class="btn-solid-white">Use the Price Calculator</a>
+          </div>
+        </div>
+        <div class="hero-highlights">
+          <div class="hl-item">
+            <div class="hl-icon">✓</div>
+            <div><strong>Finished in 3 to 5 Days:</strong> Your business gets online fast without dragging out for months.</div>
+          </div>
+          <div class="hl-item">
+            <div class="hl-icon">✓</div>
+            <div><strong>Built for Cell Phones:</strong> Customers can tap one button on their phone to call, text, or request a quote.</div>
+          </div>
+          <div class="hl-item">
+            <div class="hl-icon">✓</div>
+            <div><strong>Upfront Flat Prices ($250–$550+):</strong> You see the exact cost before we start—zero surprise fees.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- SECTION 1: 4-SITE SHOWCASE -->
+      <section id="showcase-sec">
+        <div class="section-header">
+          <span class="eyebrow">Step 1 • Explore Live & Sample Websites</span>
+          <h3>Click Any Website Below to See How It Looks & What It Costs</h3>
+          <p>Each website below shows a real example of what you get at different price points so you can pick the style that fits your business.</p>
+        </div>
+
+        <div class="ai-notice">
+          <span style="font-size: 22px;">💡</span>
+          <div>
+            <strong>Important Note About These Examples:</strong> Taylor Dunbar's website is a real, live client business. The other 3 websites (Concrete, Lawn & Tree, and Pressure Washing) are <strong>AI-generated sample companies</strong> created strictly as price and style examples so you can see what a $415 or $550 website looks like in action.
+          </div>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- CARD 1: TAYLOR DUNBAR -->
+          <div class="site-card">
+            <div class="site-card-banner banner-taylor">
+              <h4>1. Taylor Dunbar — Financial Services</h4>
+              <span class="price-pill">$350</span>
+            </div>
+            <div class="site-card-body">
+              <div class="site-badge-row">
+                <span class="tag-real">★ Real Client Website</span>
+                <span class="tag-spec">Standard Package ($350)</span>
+              </div>
+              <p>A clean, trustworthy business website built for Taylor Dunbar's Primerica office serving South MS.</p>
+              <ul class="what-you-get">
+                <li><strong>What's included for $350:</strong> Detailed 2-page/multi-section layout, About bio, list of services, company rule compliance, and tap-to-call/email buttons.</li>
+              </ul>
+            </div>
+            <div class="site-card-actions">
+              <a href="https://taylordunbarfinancial.com" target="_blank" rel="noopener" class="btn-preview">Visit Taylor's Live Site ↗</a>
+              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(0)">Load $350 Quote ↓</button>
+            </div>
+          </div>
+
+          <!-- CARD 2: CONCRETE & CONSTRUCTION -->
+          <div class="site-card">
+            <div class="site-card-banner banner-concrete">
+              <h4>2. Ironclad Concrete & Construction</h4>
+              <span class="price-pill">$415</span>
+            </div>
+            <div class="site-card-body">
+              <div class="site-badge-row">
+                <span class="tag-ai">AI Sample Company (Price Reference)</span>
+                <span class="tag-spec">2 Pages + Photo Gallery</span>
+              </div>
+              <p>A bold charcoal-and-gold contractor layout built to show off finished slabs, driveways, and patios with a customer estimate form.</p>
+              <ul class="what-you-get">
+                <li><strong>Why it's $415:</strong> Standard 2-Page Website ($350) + Work Photo Gallery (+$65) so customers can see your past jobs before calling.</li>
+              </ul>
+            </div>
+            <div class="site-card-actions">
+              <button type="button" class="btn-preview" onclick="openView('view-concrete')">Open Sample Website →</button>
+              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(1)">Load $415 Quote ↓</button>
+            </div>
+          </div>
+
+          <!-- CARD 3: LAWN & TREE SERVICE -->
+          <div class="site-card">
+            <div class="site-card-banner banner-lawn">
+              <h4>3. Pine Belt Lawn & Tree Care</h4>
+              <span class="price-pill">$550</span>
+            </div>
+            <div class="site-card-body">
+              <div class="site-badge-row">
+                <span class="tag-ai">AI Sample Company (Price Reference)</span>
+                <span class="tag-spec">3 Pages + Price Calculator</span>
+              </div>
+              <p>A fresh forest-green landscaping website where homeowners can click their yard size and tree needs to see an instant price estimate online.</p>
+              <ul class="what-you-get">
+                <li><strong>Why it's $550:</strong> 3-Page Website ($450) + Interactive Customer Price Calculator (+$120) + 4 Buttons, bundled together for $550.</li>
+              </ul>
+            </div>
+            <div class="site-card-actions">
+              <button type="button" class="btn-preview" onclick="openView('view-lawn')">Open Sample Website →</button>
+              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(2)">Load $550 Quote ↓</button>
+            </div>
+          </div>
+
+          <!-- CARD 4: PRESSURE WASHING -->
+          <div class="site-card">
+            <div class="site-card-banner banner-wash">
+              <h4>4. Gulf South Pressure Washing</h4>
+              <span class="price-pill">$550</span>
+            </div>
+            <div class="site-card-body">
+              <div class="site-badge-row">
+                <span class="tag-ai">AI Sample Company (Price Reference)</span>
+                <span class="tag-spec">3 Pages + Wash Calculator</span>
+              </div>
+              <p>A crisp ocean-blue exterior cleaning website featuring an interactive driveway, house wash, and roof cleaning price estimator.</p>
+              <ul class="what-you-get">
+                <li><strong>Why it's $550:</strong> 3-Page Website ($450) + Interactive Driveway/House Price Calculator (+$120) + 4 Buttons, bundled at $550.</li>
+              </ul>
+            </div>
+            <div class="site-card-actions">
+              <button type="button" class="btn-preview" onclick="openView('view-wash')">Open Sample Website →</button>
+              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(3)">Load $550 Quote ↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: EASY-TO-UNDERSTAND PACKAGES & UPDATES -->
+      <section id="pricing-sec">
+        <div class="section-header">
+          <span class="eyebrow">Step 2 • Plain-English Pricing</span>
+          <h3>Simple Website Packages & Ongoing Update Options</h3>
+          <p>Not sure what you need? Here is what each package means in plain, everyday terms.</p>
+        </div>
+
+        <div class="tiers-row">
+          <div class="tier-box">
+            <div class="tier-top">
+              <h4>Starter Website</h4>
+              <div class="big-price">$250</div>
+              <p>Best if you just need a clean, simple page online so customers know you're legit and can call you.</p>
+            </div>
+            <ul class="plain-list">
+              <li><strong>1 Scrolling Page:</strong> All your important info in one place.</li>
+              <li><strong>Tap-to-Call & Text:</strong> Customers click once on their phone to reach you.</li>
+              <li><strong>3 Link Buttons Included:</strong> Links to your Facebook, Instagram, or payment app.</li>
+              <li><strong>Works on All Phones:</strong> Looks clean on iPhones, Androids, and computers.</li>
+            </ul>
+            <button type="button" class="btn-use-quote" onclick="loadTier('starter')">Select $250 Starter ↓</button>
+          </div>
+
+          <div class="tier-box featured">
+            <div class="tier-top">
+              <h4>Standard Business Site</h4>
+              <div class="big-price">$350</div>
+              <p>Our most popular package (just like Taylor Dunbar's site). Great for growing local service businesses.</p>
+            </div>
+            <ul class="plain-list">
+              <li><strong>2 Pages (or Large Multi-Section Page):</strong> Plenty of room for your story and services.</li>
+              <li><strong>Full Service Breakdown:</strong> Clearly explains every service you offer.</li>
+              <li><strong>Direct Contact Info & Links:</strong> Easy buttons for customers to email, call, or message you.</li>
+              <li><strong>Custom Brand Colors:</strong> Built around the exact colors and look you want.</li>
+            </ul>
+            <button type="button" class="btn-use-quote" onclick="loadTier('standard')">Select $350 Standard ↓</button>
+          </div>
+
+          <div class="tier-box">
+            <div class="tier-top">
+              <h4>Advanced Site + Calculator</h4>
+              <div class="big-price">$550+</div>
+              <p>Best if you want your website to give customers automatic price estimates before you even pick up the phone.</p>
+            </div>
+            <ul class="plain-list">
+              <li><strong>3 or More Separate Pages:</strong> Home page, Services page, and Calculator/Contact page.</li>
+              <li><strong>Interactive Customer Price Tool:</strong> Customers click what they need and see an instant estimate.</li>
+              <li><strong>4 Link Buttons Included:</strong> Connect your socials, booking links, or payment portals.</li>
+              <li><strong>Saves You Hours on the Phone:</strong> Filters out tire-kickers automatically.</li>
+            </ul>
+            <button type="button" class="btn-use-quote" onclick="loadTier('advanced')">Select $550 Advanced ↓</button>
+          </div>
+        </div>
+
+        <div class="maint-banner">
+          <div>
+            <h4>How Do Website Updates Work After Launch?</h4>
+            <p>Want to swap out photos, update your prices, or change a phone number later? You can choose a simple monthly plan or just pay by the hour whenever you need something changed.</p>
+          </div>
+          <div class="maint-cards">
+            <div class="m-card">
+              <strong>Option A: $40 / Month Plan</strong>
+              <span>Covers small routine tweaks (new photos, price changes, text edits). Includes up to <b>1 hour of work per session</b>, max <b>2 sessions a week</b>, up to <b>6 sessions a month</b>. If a session goes over 1 hour, extra time is $35/hr.</span>
+            </div>
+            <div class="m-card">
+              <strong>Option B: $35 / Hour As-Needed</strong>
+              <span>Don't want a monthly plan? Pay $0 a month and simply reach out whenever you want an update made for a flat $35/hour rate.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: INTERACTIVE QUOTE BUILDER + CLIENT INTAKE FORM -->
+      <section id="builder-sec">
+        <div class="section-header">
+          <span class="eyebrow">Step 3 • Build Your Price & Send Your Info</span>
+          <h3>Customize Your Website Price & Fill Out Your Project Form</h3>
+          <p>Click the options on the left to see your exact price, then fill out the form on the right. Your project details and quote will be submitted directly to Drew Cox.</p>
+        </div>
+
+        <div class="workspace-grid">
+          <!-- LEFT: INTERACTIVE QUOTE CALCULATOR -->
+          <div class="panel-card">
+            <h4>Interactive Price Calculator</h4>
+            <div class="panel-sub">Click any option below—your total updates automatically at the bottom.</div>
+
+            <div class="step-box">
+              <div class="step-title">1. How many pages do you want on your website?</div>
+              <div class="step-help">More pages give you separate tabs at the top (like "Home", "Services", "Photos", and "Contact").</div>
+              <div class="page-btn-grid" id="pageGroup">
+                <button type="button" class="p-btn" onclick="setPages(1, 250, this)">1 Page<span>$250</span></button>
+                <button type="button" class="p-btn active" onclick="setPages(2, 350, this)">2 Pages<span>$350</span></button>
+                <button type="button" class="p-btn" onclick="setPages(3, 450, this)">3 Pages<span>$450</span></button>
+                <button type="button" class="p-btn" onclick="setPages(4, 550, this)">4+ Pages<span>$550</span></button>
+              </div>
+            </div>
+
+            <div class="step-box">
+              <div class="step-title">2. Extra Link Buttons & Info Boxes</div>
+              <div class="step-help">Every website comes with 3 link buttons for free. Drag the sliders if you need extra buttons or extra info sections.</div>
+              <div class="slider-row">
+                <div class="slider-card">
+                  <div class="slider-head">
+                    <span>Link Buttons</span>
+                    <span class="slider-val" id="linkLabel">3 (Included)</span>
+                  </div>
+                  <input type="range" id="linkSlider" min="1" max="12" value="3" oninput="updateEstimator()" />
+                  <div class="slider-explain">Buttons that take customers to your Facebook, Instagram, Cash App, or booking page. (First 3 free, +$15 each extra)</div>
+                </div>
+                <div class="slider-card">
+                  <div class="slider-head">
+                    <span>Extra Info Boxes</span>
+                    <span class="slider-val" id="secLabel">0 ($0)</span>
+                  </div>
+                  <input type="range" id="secSlider" min="0" max="6" value="0" oninput="updateEstimator()" />
+                  <div class="slider-explain">Extra sections on your page like Frequently Asked Questions, Team Bios, or Customer Testimonials. (+$35 each)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-box">
+              <div class="step-title">3. Optional Add-On Features (Click to Add or Remove)</div>
+              <div class="step-help">Only pick the extras you actually want on your website.</div>
+              <div class="addon-list">
+                <div class="addon-row" id="addCalc" data-title="Customer Price Calculator" data-cost="120" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Instant Customer Price Calculator</strong>
+                    <span>Lets customers click what they need (like yard size or driveway size) and see an instant price estimate on your site.</span>
+                  </div>
+                  <div class="addon-price">+$120</div>
+                </div>
+
+                <div class="addon-row" id="addGallery" data-title="Work Photo Gallery" data-cost="65" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Work / Before & After Photo Gallery</strong>
+                    <span>A clean photo showcase so customers can look through pictures of your past work.</span>
+                  </div>
+                  <div class="addon-price">+$65</div>
+                </div>
+
+                <div class="addon-row" id="addForm" data-title="Customer Quote & Message Box" data-cost="45" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Customer Quote & Message Form</strong>
+                    <span>A form on your page where customers type their name, phone number, and what job they need done.</span>
+                  </div>
+                  <div class="addon-price">+$45</div>
+                </div>
+
+                <div class="addon-row" id="addMap" data-title="Google Map & Reviews Box" data-cost="35" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Google Map & Customer Reviews Box</strong>
+                    <span>Shows an interactive map of your service area and highlights your 5-star reviews.</span>
+                  </div>
+                  <div class="addon-price">+$35</div>
+                </div>
+
+                <div class="addon-row" id="addComp" data-title="Company / Franchise Rule Setup" data-cost="40" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Corporate Rules & Disclaimers Setup</strong>
+                    <span>For insurance agents, financial reps, or franchises that require official company wording and approval.</span>
+                  </div>
+                  <div class="addon-price">+$40</div>
+                </div>
+
+                <div class="addon-row" id="addRush" data-title="2-Day Rush Delivery" data-cost="60" onclick="toggleAddon(this)">
+                  <div class="addon-text">
+                    <strong>✓ Fast 48-Hour Rush Build</strong>
+                    <span>Puts your website at the front of the line so it's finished in 2 days instead of 3–5 days.</span>
+                  </div>
+                  <div class="addon-price">+$60</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-box">
+              <div class="step-title">4. How do you want future updates handled?</div>
+              <div class="care-grid">
+                <button type="button" class="p-btn active" id="btnMonthly" onclick="setCare('monthly')">
+                  $40 / Month Plan
+                  <span>Up to 1 hr/session • 2x/wk • Max 6/mo</span>
+                </button>
+                <button type="button" class="p-btn" id="btnHourly" onclick="setCare('hourly')">
+                  $35 / Hour As-Needed
+                  <span>No monthly fee • Pay only when needed</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LIVE RECEIPT -->
+            <div class="receipt-box">
+              <div class="receipt-items" id="itemList"></div>
+              <div class="r-total-row">
+                <span>Estimated Website Total</span>
+                <div class="r-total-num" id="totalDisplay">$350</div>
+              </div>
+              <div class="r-care-note" id="careDisplay">
+                + $40/mo Update Plan (1 hr/session, 2x/wk, 6/mo max; +$35/hr over 1 hr)
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: CLIENT INTAKE & NETLIFY FORM -->
+          <div class="panel-card">
+            <h4>Project Questionnaire & Automatic Invoice</h4>
+            <div class="panel-sub">Fill out what you want on your website below. When you click submit, it sends your answers and calculated quote directly into your Netlify dashboard.</div>
+
+            <!-- NETLIFY NATIVE FORM SETUP -->
+            <form class="intake-form" 
+                  name="client-intake" 
+                  method="POST" 
+                  data-netlify="true" 
+                  netlify-honeypot="bot-field" 
+                  onsubmit="handleNetlifySubmit(event)">
+              
+              <!-- Required for Netlify static detection and bot filtering -->
+              <input type="hidden" name="form-name" value="client-intake" />
+              <p style="display: none;">
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <!-- Dynamic Calculator Data -->
+              <input type="hidden" name="Selected_Reference_Style" id="hiddenStyle" value="Taylor Dunbar Professional ($350 Base)" />
+              <input type="hidden" name="Itemized_Quote_Breakdown" id="hiddenBreakdown" value="" />
+              <input type="hidden" name="Estimated_Build_Total" id="hiddenTotal" value="$350" />
+              <input type="hidden" name="Ongoing_Maintenance_Plan" id="hiddenCare" value="$40/mo Maintenance Plan" />
+
+              <div class="f-row">
+                <div class="f-group">
+                  <label>Your Full Name *</label>
+                  <input type="text" name="Client_Name" id="clientName" placeholder="e.g., John Smith" required />
+                </div>
+                <div class="f-group">
+                  <label>What Kind of Business / Work Do You Do? *</label>
+                  <input type="text" name="Occupation_or_Trade" id="clientJob" placeholder="e.g., Concrete, Lawn Care, Barber, Salon" required />
+                </div>
+              </div>
+
+              <div class="f-row">
+                <div class="f-group">
+                  <label>Your Email Address *</label>
+                  <small>We will contact you here with your confirmation</small>
+                  <input type="email" name="Client_Email" id="clientEmail" placeholder="you@example.com" required />
+                </div>
+                <div class="f-group">
+                  <label>Phone Number for Customers to Call/Text *</label>
+                  <small>This will be put on your website buttons</small>
+                  <input type="tel" name="Business_Phone" id="clientPhone" placeholder="(601) 555-0199" required />
+                </div>
+              </div>
+
+              <div class="f-row">
+                <div class="f-group">
+                  <label>Business Name & Towns You Work In *</label>
+                  <input type="text" name="Business_and_Cities" id="clientBiz" placeholder="e.g., Smith Concrete — McComb, Summit & Brookhaven" required />
+                </div>
+                <div class="f-group">
+                  <label>Which Example Website Style Do You Like Best?</label>
+                  <select name="Chosen_Template_Style" id="styleDropdown" onchange="syncDropdownStyle()">
+                    <option value="Taylor Dunbar Professional ($350 Base)">1. Taylor Dunbar Financial Style ($350)</option>
+                    <option value="Concrete & Construction ($415 w/ Gallery)">2. Concrete & Construction Style ($415)</option>
+                    <option value="Lawn & Tree Service ($550 w/ Calculator)">3. Lawn & Tree Service Style ($550)</option>
+                    <option value="Pressure Washing ($550 w/ Calculator)">4. Pressure Washing Style ($550)</option>
+                    <option value="Starter Single-Page ($250 Base)">Simple 1-Page Starter Style ($250)</option>
+                    <option value="Fully Custom Design">Something Totally Custom</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="f-group">
+                <label>What Colors & Style Do You Want on Your Website? *</label>
+                <small>Tell me your favorite colors or the vibe you want (clean & modern, bold & rugged, bright, dark, etc.)</small>
+                <input type="text" name="Preferred_Colors_and_Vibe" id="clientColors" placeholder="e.g., Dark green and gold, or charcoal gray and yellow" required />
+              </div>
+
+              <div class="f-group">
+                <label>Tell Me a Little Bit About You & Your Business *</label>
+                <small>How long have you been doing this? Why do customers like working with you?</small>
+                <textarea name="About_The_Business" id="clientBio" placeholder="e.g., Family-owned in McComb for 8 years, free estimates, honest pricing, licensed and insured..." required></textarea>
+              </div>
+
+              <div class="f-group">
+                <label>What Services, Prices, or Links Should We Put on the Site? *</label>
+                <small>List the main jobs you do, your hours, Facebook/Instagram links, or calculator items you want</small>
+                <textarea name="Website_Information_and_Services" id="clientServices" placeholder="e.g., Driveways, house slabs, stamped patios. Open Mon-Sat 7am-6pm. Link to our Facebook page..." required></textarea>
+              </div>
+
+              <div class="submit-area">
+                <button type="submit" class="btn-submit-main" id="submitBtn">
+                  Submit Form & Send Order to Netlify →
+                </button>
+                <button type="button" class="btn-copy-sec" id="copyBtn" onclick="copyFullOrder()">
+                  Copy Quote & Answers to Send by Text
+                </button>
+                <div class="helper-note" style="font-size: 11.5px; color: var(--muted); margin-top: 4px;">
+                  Submissions are captured instantly in your Netlify dashboard under the Forms tab and forwarded directly to drewcox9179@gmail.com.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SUCCESS CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div class="icon-check">✓</div>
+      <h3>Project Submitted!</h3>
+      <p>Thank you! Your website request and itemized quote have been sent directly to Drew Cox.</p>
+      
+      <div class="submitted-summary">
+        <div><strong>Selected Style:</strong> <span id="modalStyle">-</span></div>
+        <div><strong>Estimated Total:</strong> <span id="modalTotal" style="color: var(--cta); font-weight: 700;">-</span></div>
+        <div><strong>Maintenance:</strong> <span id="modalCare">-</span></div>
+      </div>
+
+      <button type="button" class="btn-solid-orange" style="width: 100%; border: none;" onclick="closeModal()">
+        Done & Close
+      </button>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       VIEW 2: SEPARATE PAGE — IRONCLAD CONCRETE & CONSTRUCTION ($415)
+       ================================================================= -->
+  <div id="view-concrete" class="page-view" style="background: #f4f4f5;">
+    <div class="demo-return-bar">
+      <div class="left-info">
+        <span class="demo-pill-ai">AI-Generated Sample Company</span>
+        <span><strong>Price Reference: $415</strong> (2-Page Standard Website $350 + Work Photo Gallery $65)</span>
+      </div>
+      <div class="demo-bar-btns">
+        <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
+        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(1)">Choose This $415 Style & Customize Quote →</button>
+      </div>
+    </div>
+
+    <header class="demo-site-header" style="background: #18181b; border-bottom: 4px solid #eab308;">
+      <div>
+        <h2 style="font-family: var(--serif); font-size: 26px; color: #eab308;">IRONCLAD CONCRETE & SLABS</h2>
+        <span style="font-size: 12.5px; color: #d4d4d8;">Serving McComb, Summit, Brookhaven & South Mississippi • (601) 555-0144</span>
+      </div>
+      <div class="demo-nav-tabs">
+        <button type="button" class="demo-tab-btn active-tab" onclick="switchSubTab('concrete', 1, this)">Page 1: Home & Services</button>
+        <button type="button" class="demo-tab-btn" onclick="switchSubTab('concrete', 2, this)">Page 2: Work Photo Gallery & Estimate</button>
+      </div>
+    </header>
+
+    <div id="concrete-p1" class="demo-subpage active-subpage">
+      <div class="demo-hero" style="background: linear-gradient(135deg, #18181b 0%, #3f3f46 100%);">
+        <span style="background: #eab308; color: #18181b; padding: 4px 12px; font-weight: 700; font-size: 12px; border-radius: 4px; text-transform: uppercase;">Licensed & Insured South MS Concrete Crew</span>
+        <h2 style="margin-top: 14px;">Built Solid. Poured Right the First Time.</h2>
+        <p>From reinforced house and shop slabs to driveways, sidewalks, and stamped backyard patios—we deliver clean, level concrete work across Pike and Lincoln County.</p>
+        <button type="button" class="btn-solid-orange" style="background: #eab308; color: #18181b; border-color: #18181b;" onclick="switchSubTab('concrete', 2, document.querySelectorAll('#view-concrete .demo-tab-btn')[1])">See Our Work Photos & Request Free Estimate →</button>
+      </div>
+
+      <div class="demo-section">
+        <h3 style="font-family: var(--serif); font-size: 28px; text-align: center;">Our Concrete & Dirt Work Services</h3>
+        <div class="demo-grid-3">
+          <div class="demo-card" style="border-top: 5px solid #eab308;">
+            <h4>Driveways & Parking Pads</h4>
+            <p style="color: #52525b; font-size: 14px;">4-inch to 6-inch reinforced concrete driveways, RV pads, and tear-out replacements with proper drainage grading.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #eab308;">
+            <h4>Shop & Metal Building Slabs</h4>
+            <p style="color: #52525b; font-size: 14px;">Laser-leveled monolithic slabs with heavy-duty rebar footings for workshops, barns, and home additions.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #eab308;">
+            <h4>Patios & Stamped Concrete</h4>
+            <p style="color: #52525b; font-size: 14px;">Custom broom-finished, stained, or stamped outdoor living patios, walkways, and pool decks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="concrete-p2" class="demo-subpage">
+      <div class="demo-section">
+        <h3 style="font-family: var(--serif); font-size: 30px; margin-bottom: 6px;">Recent Concrete Projects Gallery</h3>
+        <p style="color: #52525b; margin-bottom: 20px;">This page demonstrates the <strong>+$65 Work Photo Gallery add-on</strong> included in the $415 quote.</p>
+        <div class="demo-grid-3">
+          <div class="demo-card">
+            <div style="background: #27272a; color: #eab308; height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px;">[Before / After Photo: 30x40 Shop Slab]</div>
+            <h4>30x40 Insulated Shop Slab — Summit, MS</h4>
+            <p style="font-size: 13.5px; color: #52525b;">Full pad prep, moisture barrier, rebar grid, and smooth power-trowel finish completed in 3 days.</p>
+          </div>
+          <div class="demo-card">
+            <div style="background: #27272a; color: #eab308; height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px;">[Before / After Photo: Double Driveway]</div>
+            <h4>1,200 Sq Ft Driveway Pour — McComb, MS</h4>
+            <p style="font-size: 13.5px; color: #52525b;">Removed cracked asphalt, compacted red clay base, and poured 4,000 PSI fiber-mesh concrete.</p>
+          </div>
+          <div class="demo-card">
+            <div style="background: #27272a; color: #eab308; height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px;">[Before / After Photo: Backyard Patio]</div>
+            <h4>Covered Back Patio Extension — Brookhaven, MS</h4>
+            <p style="font-size: 13.5px; color: #52525b;">16x24 broom-finish patio tied into existing slab with clean expansion joints.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       VIEW 3: SEPARATE PAGE — PINE BELT LAWN & TREE CARE ($550)
+       ================================================================= -->
+  <div id="view-lawn" class="page-view" style="background: #f0fdf4;">
+    <div class="demo-return-bar">
+      <div class="left-info">
+        <span class="demo-pill-ai">AI-Generated Sample Company</span>
+        <span><strong>Price Reference: $550</strong> (3-Page Website $450 + Interactive Customer Price Calculator $120, Bundled at $550)</span>
+      </div>
+      <div class="demo-bar-btns">
+        <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
+        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(2)">Choose This $550 Style & Customize Quote →</button>
+      </div>
+    </div>
+
+    <header class="demo-site-header" style="background: #14532d; border-bottom: 4px solid #22c55e;">
+      <div>
+        <h2 style="font-family: var(--serif); font-size: 26px; color: #fff;">PINE BELT LAWN & TREE SERVICE</h2>
+        <span style="font-size: 12.5px; color: #bbf7d0;">Mowing, Bush Hogging, Mulch & Tree Removal • Serving Pike & Amite County</span>
+      </div>
+      <div class="demo-nav-tabs">
+        <button type="button" class="demo-tab-btn active-tab" onclick="switchSubTab('lawn', 1, this)">Page 1: Home</button>
+        <button type="button" class="demo-tab-btn" onclick="switchSubTab('lawn', 2, this)">Page 2: Our Services</button>
+        <button type="button" class="demo-tab-btn" onclick="switchSubTab('lawn', 3, this)">Page 3: Instant Yard Price Calculator</button>
+      </div>
+    </header>
+
+    <div id="lawn-p1" class="demo-subpage active-subpage">
+      <div class="demo-hero" style="background: linear-gradient(135deg, #14532d 0%, #15803d 100%);">
+        <h2>Dependable Yard Care & Tree Work Without the Runaround.</h2>
+        <p>Use our online price calculator to see an instant estimate for lawn mowing, leaf cleanup, or tree trimming in under 30 seconds.</p>
+        <button type="button" class="btn-solid-orange" style="background: #facc15; color: #14532d; border-color: #14532d;" onclick="switchSubTab('lawn', 3, document.querySelectorAll('#view-lawn .demo-tab-btn')[2])">Try the Instant Yard Price Calculator (Page 3) →</button>
+      </div>
+    </div>
+
+    <div id="lawn-p2" class="demo-subpage">
+      <div class="demo-section">
+        <h3 style="font-family: var(--serif); font-size: 28px; color: #14532d; text-align: center;">Full-Service Property Maintenance</h3>
+        <div class="demo-grid-3">
+          <div class="demo-card" style="border-top: 5px solid #16a34a;">
+            <h4>Weekly & Bi-Weekly Mowing</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Includes mowing, string trimming around fences and trees, edging sidewalks, and blowing off all driveways and porches.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #16a34a;">
+            <h4>Tree Trimming & Limb Removal</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Safe removal of low-hanging limbs over roofs and driveways, storm cleanup, and haul-off service.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #16a34a;">
+            <h4>Flower Bed Cleanout & Mulch</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Weed removal, shrub trimming, pine straw installation, and fresh black or brown mulch spreading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lawn-p3" class="demo-subpage">
+      <div class="demo-section">
+        <div class="demo-calc-box">
+          <h3 style="font-family: var(--serif); font-size: 26px; color: #14532d; margin-bottom: 6px;">Instant Yard & Tree Estimate Calculator</h3>
+          <p style="font-size: 13.5px; color: #52525b; margin-bottom: 18px;">This working tool shows what your customers get when you include the <strong>Interactive Price Calculator</strong> on your website:</p>
+
+          <div style="display: grid; gap: 14px;">
+            <div>
+              <label style="font-weight: 700; font-size: 13.5px; display: block; margin-bottom: 4px;">1. Select Your Lot / Yard Size:</label>
+              <select id="demoLawnSize" onchange="calcDemoLawn()" style="width: 100%; padding: 10px; border: 2px solid #14532d; border-radius: 6px; font-size: 14px;">
+                <option value="45">Small Town Lot (Under 1/4 Acre) — $45</option>
+                <option value="65" selected>Standard Yard (1/4 to 1/2 Acre) — $65</option>
+                <option value="95">Large Yard (1/2 to 1 Acre) — $95</option>
+                <option value="150">Acreage (1 to 2 Acres) — $150</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-weight: 700; font-size: 13.5px; display: block; margin-bottom: 6px;">2. Add Extra Yard or Tree Services:</label>
+              <label style="display: block; margin-bottom: 6px; cursor: pointer;"><input type="checkbox" id="lawnHedge" value="40" onchange="calcDemoLawn()"> Bush & Hedge Trimming (+$40)</label>
+              <label style="display: block; margin-bottom: 6px; cursor: pointer;"><input type="checkbox" id="lawnMulch" value="85" onchange="calcDemoLawn()"> Flower Bed Weed & Fresh Mulch (+$85)</label>
+              <label style="display: block; cursor: pointer;"><input type="checkbox" id="lawnLimb" value="125" onchange="calcDemoLawn()"> Low Tree Limb Trimming & Haul-Off (+$125)</label>
+            </div>
+
+            <div style="background: #14532d; color: #fff; padding: 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+              <span>Estimated Customer Job Price:</span>
+              <strong id="demoLawnTotal" style="font-family: var(--serif); font-size: 32px; color: #facc15;">$65</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       VIEW 4: SEPARATE PAGE — GULF SOUTH PRESSURE WASHING ($550)
+       ================================================================= -->
+  <div id="view-wash" class="page-view" style="background: #f0f9ff;">
+    <div class="demo-return-bar">
+      <div class="left-info">
+        <span class="demo-pill-ai">AI-Generated Sample Company</span>
+        <span><strong>Price Reference: $550</strong> (3-Page Website $450 + Interactive Wash Calculator $120, Bundled at $550)</span>
+      </div>
+      <div class="demo-bar-btns">
+        <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
+        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(3)">Choose This $550 Style & Customize Quote →</button>
+      </div>
+    </div>
+
+    <header class="demo-site-header" style="background: #0c4a6e; border-bottom: 4px solid #38bdf8;">
+      <div>
+        <h2 style="font-family: var(--serif); font-size: 26px; color: #fff;">GULF SOUTH EXTERIOR WASH</h2>
+        <span style="font-size: 12.5px; color: #bae6fd;">Soft-Wash House Cleaning, Concrete Driveways & Roof Treatment</span>
+      </div>
+      <div class="demo-nav-tabs">
+        <button type="button" class="demo-tab-btn active-tab" onclick="switchSubTab('wash', 1, this)">Page 1: Home</button>
+        <button type="button" class="demo-tab-btn" onclick="switchSubTab('wash', 2, this)">Page 2: Cleaning Services</button>
+        <button type="button" class="demo-tab-btn" onclick="switchSubTab('wash', 3, this)">Page 3: Instant Wash Price Calculator</button>
+      </div>
+    </header>
+
+    <div id="wash-p1" class="demo-subpage active-subpage">
+      <div class="demo-hero" style="background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%);">
+        <h2>Make Your Home & Driveway Look Brand New Today.</h2>
+        <p>Safe low-pressure house washing that kills green algae and mildew without damaging your vinyl, brick, or paint.</p>
+        <button type="button" class="btn-solid-orange" style="background: #38bdf8; color: #0c4a6e; border-color: #fff;" onclick="switchSubTab('wash', 3, document.querySelectorAll('#view-wash .demo-tab-btn')[2])">Try the Instant Wash Calculator (Page 3) →</button>
+      </div>
+    </div>
+
+    <div id="wash-p2" class="demo-subpage">
+      <div class="demo-section">
+        <h3 style="font-family: var(--serif); font-size: 28px; color: #0c4a6e; text-align: center;">Exterior Cleaning Packages</h3>
+        <div class="demo-grid-3">
+          <div class="demo-card" style="border-top: 5px solid #0284c7;">
+            <h4>Soft-Wash House Washing</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Removes green mold, dirt dauber nests, and red clay stains from siding, brick, soffits, and gutters.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #0284c7;">
+            <h4>Driveway & Sidewalk Surface Cleaning</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Commercial rotary surface cleaner removes black mildew and brightens concrete with zero zebra striping.</p>
+          </div>
+          <div class="demo-card" style="border-top: 5px solid #0284c7;">
+            <h4>No-Pressure Roof Streak Treatment</h4>
+            <p style="font-size: 14px; color: #3f3f46;">Gentle treatment that eliminates black shingle streaks without high pressure that ruins roof shingles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wash-p3" class="demo-subpage">
+      <div class="demo-section">
+        <div class="demo-calc-box">
+          <h3 style="font-family: var(--serif); font-size: 26px; color: #0c4a6e; margin-bottom: 6px;">Instant Exterior Wash Price Calculator</h3>
+          <p style="font-size: 13.5px; color: #52525b; margin-bottom: 18px;">Try clicking the options below—this is the exact kind of customer
