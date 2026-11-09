@@ -1067,23 +1067,44 @@
       box-shadow: 6px 6px 0px #0f172a;
     }
 
+
+    /* ===== CONVERSION UPDATE ADDITIONS ===== */
+    .tag-live { background: #dcfce7; color: #166534; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; }
+    .tag-demo { background: var(--teal-soft); color: var(--teal); font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; }
+    .live-note { background: var(--emerald-soft); border: 1px solid #6ee7b7; border-radius: 6px; padding: 10px 12px; font-size: 13px; color: #065f46; }
+    .tier-box { position: relative; }
+    .popular-badge { position: absolute; top: -13px; right: 18px; background: var(--cta); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; border: 2px solid var(--border-dark); }
+    .btn-tier { background: var(--navy); color: #fff; border: 2px solid var(--navy); padding: 11px 12px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; text-align: center; }
+    .btn-tier:hover { opacity: 0.92; }
+    .tier-box.featured .btn-tier { background: var(--cta); border-color: var(--border-dark); }
+    .pricing-note { font-size: 13px; color: var(--muted); margin: -8px 0 24px; }
+    .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .roi-card { background: var(--surface); border: 2px solid var(--border-dark); border-radius: 10px; padding: 22px; box-shadow: 4px 4px 0 var(--border-dark); }
+    .roi-icon { width: 46px; height: 46px; border-radius: 10px; background: var(--blue-soft); font-size: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .roi-card h4 { font-family: var(--serif); font-size: 21px; font-weight: 400; margin-bottom: 6px; color: var(--navy); }
+    .roi-card p { font-size: 14px; color: var(--muted); }
+    .preview-wrap { max-width: 640px; margin: 0 auto; }
+    .site-footer { background: var(--navy); color: #cbd5e1; padding: 28px 24px; text-align: center; font-size: 13px; border-top: 3px solid var(--cta); }
+    .footer-link { background: none; border: none; color: #94a3b8; text-decoration: underline; cursor: pointer; font-family: var(--sans); font-size: 12.5px; margin-top: 8px; }
+    .footer-link:hover { color: #fff; }
+    .modal-card.onboard { max-width: 640px; text-align: left; max-height: 90vh; overflow-y: auto; }
+    .modal-card.onboard h3 { margin-bottom: 4px; }
+    .modal-card.onboard > p { margin-bottom: 16px; }
+    .modal-close-x { float: right; background: none; border: none; font-size: 26px; cursor: pointer; color: var(--muted); line-height: 1; }
+    .form-status { font-size: 13px; color: #b91c1c; display: none; }
+
     @media (max-width: 960px) {
-      .hero-inner,
-      .showcase-grid,
-      .tiers-row,
-      .maint-banner,
-      .workspace-grid,
-      .demo-grid-3 {
-        grid-template-columns: 1fr;
-      }
+      .hero-inner, .showcase-grid, .tiers-row, .maint-banner, .roi-grid, .demo-grid-3 { grid-template-columns: 1fr; }
       .f-row { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 32px; }
+      .demo-hero h2 { font-size: 32px; }
     }
   </style>
 </head>
 <body>
 
   <!-- =================================================================
-       VIEW 1: DREW COX MAIN PORTFOLIO & QUOTE HOMEPAGE
+       VIEW 1: HOMEPAGE
        ================================================================= -->
   <div id="view-home" class="page-view active-view">
     <nav class="top-nav">
@@ -1095,7 +1116,7 @@
         <div class="nav-links">
           <a href="#showcase-sec">See Sample Websites</a>
           <a href="#pricing-sec">Simple Pricing</a>
-          <a href="#builder-sec" class="nav-cta">Build Your Quote & Order →</a>
+          <a href="#preview-sec" class="nav-cta">Get My Free Preview →</a>
         </div>
       </div>
     </nav>
@@ -1104,16 +1125,16 @@
       <div class="hero-inner">
         <div>
           <h2>Clean, Fast Websites Built for Local Businesses.</h2>
-          <p>No confusing tech talk or $2,000 agency bills. Click through the example websites below to see what you like, build your exact price in 60 seconds, and fill out the short form to start your build.</p>
+          <p>No confusing tech talk or $2,000 agency bills. Click through the example websites below, pick the package that fits, and tell me about your business in 60 seconds. I'll build you a live preview to test on your phone.</p>
           <div class="hero-btns">
             <a href="#showcase-sec" class="btn-solid-orange">Click Through Example Sites ↓</a>
-            <a href="#builder-sec" class="btn-solid-white">Use the Price Calculator</a>
+            <a href="#preview-sec" class="btn-solid-white">Get My Free Preview</a>
           </div>
         </div>
         <div class="hero-highlights">
           <div class="hl-item">
             <div class="hl-icon">✓</div>
-            <div><strong>Finished in 3 to 5 Days:</strong> Your business gets online fast without dragging out for months.</div>
+            <div><strong>Live in 5–7 Days:</strong> Your business gets online fast without dragging out for months.</div>
           </div>
           <div class="hl-item">
             <div class="hl-icon">✓</div>
@@ -1121,171 +1142,171 @@
           </div>
           <div class="hl-item">
             <div class="hl-icon">✓</div>
-            <div><strong>Upfront Flat Prices ($250–$550+):</strong> You see the exact cost before we start—zero surprise fees.</div>
+            <div><strong>Upfront Flat Prices ($250–$550):</strong> You see the exact cost before we start—zero surprise fees.</div>
           </div>
         </div>
       </div>
     </section>
 
     <div class="container">
-      <!-- SECTION 1: 4-SITE SHOWCASE -->
+      <!-- SECTION 1: SHOWCASE -->
       <section id="showcase-sec">
         <div class="section-header">
           <span class="eyebrow">Step 1 • Explore Live & Sample Websites</span>
-          <h3>Click Any Website Below to See How It Looks & What It Costs</h3>
-          <p>Each website below shows a real example of what you get at different price points so you can pick the style that fits your business.</p>
+          <h3>See What a Website Built for Your Trade Can Look Like</h3>
+          <p>Browse the examples below. Any style can be customized for your business at any package—pricing is separate, in Step 2.</p>
         </div>
 
         <div class="ai-notice">
           <span style="font-size: 22px;">💡</span>
           <div>
-            <strong>Important Note About These Examples:</strong> Taylor Dunbar's website is a real, live client business. The other 3 websites (Concrete, Lawn & Tree, and Pressure Washing) are <strong>AI-generated sample companies</strong> created strictly as price and style examples so you can see what a $415 or $550 website looks like in action.
+            <strong>About These Examples:</strong> Taylor Dunbar's website is a real, live client business. Concrete, Lawn & Tree, and Pressure Washing are <strong>interactive industry concept demos</strong> with sample companies, built to show you what's possible for your trade.
           </div>
         </div>
 
         <div class="showcase-grid">
-          <!-- CARD 1: TAYLOR DUNBAR -->
+          <!-- CARD 1: TAYLOR DUNBAR (LIVE CLIENT) -->
           <div class="site-card">
             <div class="site-card-banner banner-taylor">
-              <h4>1. Taylor Dunbar — Financial Services</h4>
-              <span class="price-pill">$350</span>
+              <h4>Taylor Dunbar — Financial Services</h4>
             </div>
             <div class="site-card-body">
               <div class="site-badge-row">
-                <span class="tag-real">★ Real Client Website</span>
-                <span class="tag-spec">Standard Package ($350)</span>
+                <span class="tag-live">★ Verified Live Client</span>
               </div>
-              <p>A clean, trustworthy business website built for Taylor Dunbar's Primerica office serving South MS.</p>
+              <p>A real, working website for Taylor Dunbar's Primerica office serving South Mississippi—live on the web today.</p>
               <ul class="what-you-get">
-                <li><strong>What's included for $350:</strong> Detailed 2-page/multi-section layout, About bio, list of services, company rule compliance, and tap-to-call/email buttons.</li>
+                <li><strong>Interactive Compound Growth Calculator</strong></li>
+                <li><strong>Event Registration</strong></li>
+                <li><strong>Mobile-First Lead Capture</strong></li>
               </ul>
             </div>
             <div class="site-card-actions">
               <a href="https://taylordunbarfinancial.com" target="_blank" rel="noopener" class="btn-preview">Visit Taylor's Live Site ↗</a>
-              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(0)">Load $350 Quote ↓</button>
+              <button type="button" class="btn-use-quote" onclick="pickDemo('Professional Services (like Taylor Dunbar)')">Get a Site Like This ↓</button>
             </div>
           </div>
 
-          <!-- CARD 2: CONCRETE & CONSTRUCTION -->
+          <!-- CARD 2: CONCRETE -->
           <div class="site-card">
             <div class="site-card-banner banner-concrete">
-              <h4>2. Ironclad Concrete & Construction</h4>
-              <span class="price-pill">$415</span>
+              <h4>Concrete / Contracting</h4>
             </div>
             <div class="site-card-body">
               <div class="site-badge-row">
-                <span class="tag-ai">AI Sample Company (Price Reference)</span>
-                <span class="tag-spec">2 Pages + Photo Gallery</span>
+                <span class="tag-demo">Interactive Industry Concept Demo</span>
               </div>
-              <p>A bold charcoal-and-gold contractor layout built to show off finished slabs, driveways, and patios with a customer estimate form.</p>
+              <p>A bold charcoal-and-gold contractor layout built to show off finished slabs, driveways, and patios with a work photo gallery.</p>
               <ul class="what-you-get">
-                <li><strong>Why it's $415:</strong> Standard 2-Page Website ($350) + Work Photo Gallery (+$65) so customers can see your past jobs before calling.</li>
+                <li><strong>Ironclad Concrete & Slabs</strong> — sample company</li>
+                <li>Services page + project photo gallery</li>
               </ul>
             </div>
             <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-concrete')">Open Sample Website →</button>
-              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(1)">Load $415 Quote ↓</button>
+              <button type="button" class="btn-preview" onclick="openView('view-concrete')">Open Demo →</button>
+              <button type="button" class="btn-use-quote" onclick="pickDemo('Concrete / Contracting')">Get This Style ↓</button>
             </div>
           </div>
 
-          <!-- CARD 3: LAWN & TREE SERVICE -->
+          <!-- CARD 3: LAWN & TREE -->
           <div class="site-card">
             <div class="site-card-banner banner-lawn">
-              <h4>3. Pine Belt Lawn & Tree Care</h4>
-              <span class="price-pill">$550</span>
+              <h4>Lawn & Tree Service</h4>
             </div>
             <div class="site-card-body">
               <div class="site-badge-row">
-                <span class="tag-ai">AI Sample Company (Price Reference)</span>
-                <span class="tag-spec">3 Pages + Price Calculator</span>
+                <span class="tag-demo">Interactive Industry Concept Demo</span>
               </div>
-              <p>A fresh forest-green landscaping website where homeowners can click their yard size and tree needs to see an instant price estimate online.</p>
+              <p>A fresh forest-green site where homeowners pick their yard size and tree needs to see an instant price estimate.</p>
               <ul class="what-you-get">
-                <li><strong>Why it's $550:</strong> 3-Page Website ($450) + Interactive Customer Price Calculator (+$120) + 4 Buttons, bundled together for $550.</li>
+                <li><strong>Pine Belt Lawn & Tree Care</strong> — sample company</li>
+                <li>Working yard price calculator</li>
               </ul>
             </div>
             <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-lawn')">Open Sample Website →</button>
-              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(2)">Load $550 Quote ↓</button>
+              <button type="button" class="btn-preview" onclick="openView('view-lawn')">Open Demo →</button>
+              <button type="button" class="btn-use-quote" onclick="pickDemo('Lawn & Tree Service')">Get This Style ↓</button>
             </div>
           </div>
 
           <!-- CARD 4: PRESSURE WASHING -->
           <div class="site-card">
             <div class="site-card-banner banner-wash">
-              <h4>4. Gulf South Pressure Washing</h4>
-              <span class="price-pill">$550</span>
+              <h4>Pressure Washing</h4>
             </div>
             <div class="site-card-body">
               <div class="site-badge-row">
-                <span class="tag-ai">AI Sample Company (Price Reference)</span>
-                <span class="tag-spec">3 Pages + Wash Calculator</span>
+                <span class="tag-demo">Interactive Industry Concept Demo</span>
               </div>
-              <p>A crisp ocean-blue exterior cleaning website featuring an interactive driveway, house wash, and roof cleaning price estimator.</p>
+              <p>A crisp ocean-blue exterior cleaning site with an interactive house, driveway, and roof price estimator.</p>
               <ul class="what-you-get">
-                <li><strong>Why it's $550:</strong> 3-Page Website ($450) + Interactive Driveway/House Price Calculator (+$120) + 4 Buttons, bundled at $550.</li>
+                <li><strong>Gulf South Pressure Washing</strong> — sample company</li>
+                <li>Working wash price calculator</li>
               </ul>
             </div>
             <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-wash')">Open Sample Website →</button>
-              <button type="button" class="btn-use-quote" onclick="loadShowcaseToQuote(3)">Load $550 Quote ↓</button>
+              <button type="button" class="btn-preview" onclick="openView('view-wash')">Open Demo →</button>
+              <button type="button" class="btn-use-quote" onclick="pickDemo('Pressure Washing')">Get This Style ↓</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 2: EASY-TO-UNDERSTAND PACKAGES & UPDATES -->
+      <!-- SECTION 2: PRICING -->
       <section id="pricing-sec">
         <div class="section-header">
           <span class="eyebrow">Step 2 • Plain-English Pricing</span>
-          <h3>Simple Website Packages & Ongoing Update Options</h3>
-          <p>Not sure what you need? Here is what each package means in plain, everyday terms.</p>
+          <h3>Three Packages. Any Industry. One Flat Price.</h3>
+          <p>Every package works for any trade—pick the one that fits where your business is today.</p>
         </div>
 
         <div class="tiers-row">
           <div class="tier-box">
             <div class="tier-top">
-              <h4>Starter Website</h4>
+              <h4>Starter Landing Page</h4>
               <div class="big-price">$250</div>
-              <p>Best if you just need a clean, simple page online so customers know you're legit and can call you.</p>
+              <p>A clean, simple page so customers know you're legit and can reach you fast.</p>
             </div>
             <ul class="plain-list">
-              <li><strong>1 Scrolling Page:</strong> All your important info in one place.</li>
-              <li><strong>Tap-to-Call & Text:</strong> Customers click once on their phone to reach you.</li>
-              <li><strong>3 Link Buttons Included:</strong> Links to your Facebook, Instagram, or payment app.</li>
-              <li><strong>Works on All Phones:</strong> Looks clean on iPhones, Androids, and computers.</li>
+              <li><strong>Clean 1-page scrolling site</strong></li>
+              <li><strong>Sticky click-to-call/text buttons</strong></li>
+              <li><strong>Mobile-optimized layout</strong></li>
+              <li><strong>Basic lead form</strong></li>
             </ul>
-            <button type="button" class="btn-use-quote" onclick="loadTier('starter')">Select $250 Starter ↓</button>
+            <button type="button" class="btn-tier" onclick="choosePackage('Starter ($250)')">Choose Starter ↓</button>
           </div>
 
           <div class="tier-box featured">
+            <span class="popular-badge">★ Most Popular</span>
             <div class="tier-top">
-              <h4>Standard Business Site</h4>
+              <h4>Growth Business Package</h4>
               <div class="big-price">$350</div>
-              <p>Our most popular package (just like Taylor Dunbar's site). Great for growing local service businesses.</p>
+              <p>For growing local businesses that want the site to do more of the selling.</p>
             </div>
             <ul class="plain-list">
-              <li><strong>2 Pages (or Large Multi-Section Page):</strong> Plenty of room for your story and services.</li>
-              <li><strong>Full Service Breakdown:</strong> Clearly explains every service you offer.</li>
-              <li><strong>Direct Contact Info & Links:</strong> Easy buttons for customers to email, call, or message you.</li>
-              <li><strong>Custom Brand Colors:</strong> Built around the exact colors and look you want.</li>
+              <li><strong>Everything in Starter</strong></li>
+              <li><strong>Custom interactive calculator or quote estimator</strong></li>
+              <li><strong>Photo gallery</strong></li>
+              <li><strong>Google Maps/reviews section</strong></li>
+              <li><strong>Local SEO setup</strong></li>
             </ul>
-            <button type="button" class="btn-use-quote" onclick="loadTier('standard')">Select $350 Standard ↓</button>
+            <button type="button" class="btn-tier" onclick="choosePackage('Growth ($350 - Most Popular)')">Choose Growth ↓</button>
           </div>
 
           <div class="tier-box">
             <div class="tier-top">
-              <h4>Advanced Site + Calculator</h4>
-              <div class="big-price">$550+</div>
-              <p>Best if you want your website to give customers automatic price estimates before you even pick up the phone.</p>
+              <h4>Pro Lead-Gen Package</h4>
+              <div class="big-price">$550</div>
+              <p>A full authority build designed to bring in qualified jobs.</p>
             </div>
             <ul class="plain-list">
-              <li><strong>3 or More Separate Pages:</strong> Home page, Services page, and Calculator/Contact page.</li>
-              <li><strong>Interactive Customer Price Tool:</strong> Customers click what they need and see an instant estimate.</li>
-              <li><strong>4 Link Buttons Included:</strong> Connect your socials, booking links, or payment portals.</li>
-              <li><strong>Saves You Hours on the Phone:</strong> Filters out tire-kickers automatically.</li>
+              <li><strong>Multi-section authority build</strong></li>
+              <li><strong>Advanced custom job-quote intake form</strong></li>
+              <li><strong>Before/after photo showcase</strong></li>
+              <li><strong>Google Business Profile optimization</strong></li>
+              <li><strong>Priority turnaround</strong></li>
             </ul>
-            <button type="button" class="btn-use-quote" onclick="loadTier('advanced')">Select $550 Advanced ↓</button>
+            <button type="button" class="btn-tier" onclick="choosePackage('Pro Lead-Gen ($550)')">Choose Pro ↓</button>
           </div>
         </div>
 
@@ -1307,229 +1328,86 @@
         </div>
       </section>
 
-      <!-- SECTION 3: INTERACTIVE QUOTE BUILDER + CLIENT INTAKE FORM -->
-      <section id="builder-sec">
+      <!-- SECTION 3: WHY LOCAL BUSINESSES SWITCH -->
+      <section id="why-sec">
         <div class="section-header">
-          <span class="eyebrow">Step 3 • Build Your Price & Send Your Info</span>
-          <h3>Customize Your Website Price & Fill Out Your Project Form</h3>
-          <p>Click the options on the left to see your exact price, then fill out the form on the right. Your project details and quote will be submitted directly to Drew Cox.</p>
+          <span class="eyebrow">Why It Works</span>
+          <h3>Why Local Businesses Switch to Us</h3>
+          <p>Results first, tech talk never.</p>
+        </div>
+        <div class="roi-grid">
+          <div class="roi-card">
+            <div class="roi-icon">📱</div>
+            <h4>Built for Mobile Thumbs</h4>
+            <p>Over 80% of local customers search on their phones. Every site includes sticky Click-to-Call and Click-to-Text buttons so customers reach you in one tap.</p>
+          </div>
+          <div class="roi-card">
+            <div class="roi-icon">🎯</div>
+            <h4>Automatic Quote Filtering</h4>
+            <p>Stop playing phone tag with tire-kickers. Custom intake forms collect the customer's job details, location, and service needs before you even call them back.</p>
+          </div>
+          <div class="roi-card">
+            <div class="roi-icon">⚡</div>
+            <h4>Live in 5–7 Days</h4>
+            <p>No 2-month agency delays. You send your basic info, I build a live preview you can test on your phone, and we launch within a week.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: 60-SECOND FREE PREVIEW FORM -->
+      <section id="preview-sec">
+        <div class="section-header" style="text-align: center;">
+          <span class="eyebrow">Step 3 • 60-Second Free Preview</span>
+          <h3>Get Your Free Preview / Quote</h3>
+          <p style="margin-left: auto; margin-right: auto;">Four quick fields. I'll text or call you back with your live preview.</p>
         </div>
 
-        <div class="workspace-grid">
-          <!-- LEFT: INTERACTIVE QUOTE CALCULATOR -->
+        <div class="preview-wrap">
           <div class="panel-card">
-            <h4>Interactive Price Calculator</h4>
-            <div class="panel-sub">Click any option below—your total updates automatically at the bottom.</div>
-
-            <div class="step-box">
-              <div class="step-title">1. How many pages do you want on your website?</div>
-              <div class="step-help">More pages give you separate tabs at the top (like "Home", "Services", "Photos", and "Contact").</div>
-              <div class="page-btn-grid" id="pageGroup">
-                <button type="button" class="p-btn" onclick="setPages(1, 250, this)">1 Page<span>$250</span></button>
-                <button type="button" class="p-btn active" onclick="setPages(2, 350, this)">2 Pages<span>$350</span></button>
-                <button type="button" class="p-btn" onclick="setPages(3, 450, this)">3 Pages<span>$450</span></button>
-                <button type="button" class="p-btn" onclick="setPages(4, 550, this)">4+ Pages<span>$550</span></button>
-              </div>
-            </div>
-
-            <div class="step-box">
-              <div class="step-title">2. Extra Link Buttons & Info Boxes</div>
-              <div class="step-help">Every website comes with 3 link buttons for free. Drag the sliders if you need extra buttons or extra info sections.</div>
-              <div class="slider-row">
-                <div class="slider-card">
-                  <div class="slider-head">
-                    <span>Link Buttons</span>
-                    <span class="slider-val" id="linkLabel">3 (Included)</span>
-                  </div>
-                  <input type="range" id="linkSlider" min="1" max="12" value="3" oninput="updateEstimator()" />
-                  <div class="slider-explain">Buttons that take customers to your Facebook, Instagram, Cash App, or booking page. (First 3 free, +$15 each extra)</div>
-                </div>
-                <div class="slider-card">
-                  <div class="slider-head">
-                    <span>Extra Info Boxes</span>
-                    <span class="slider-val" id="secLabel">0 ($0)</span>
-                  </div>
-                  <input type="range" id="secSlider" min="0" max="6" value="0" oninput="updateEstimator()" />
-                  <div class="slider-explain">Extra sections on your page like Frequently Asked Questions, Team Bios, or Customer Testimonials. (+$35 each)</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="step-box">
-              <div class="step-title">3. Optional Add-On Features (Click to Add or Remove)</div>
-              <div class="step-help">Only pick the extras you actually want on your website.</div>
-              <div class="addon-list">
-                <div class="addon-row" id="addCalc" data-title="Customer Price Calculator" data-cost="120" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Instant Customer Price Calculator</strong>
-                    <span>Lets customers click what they need (like yard size or driveway size) and see an instant price estimate on your site.</span>
-                  </div>
-                  <div class="addon-price">+$120</div>
-                </div>
-
-                <div class="addon-row" id="addGallery" data-title="Work Photo Gallery" data-cost="65" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Work / Before & After Photo Gallery</strong>
-                    <span>A clean photo showcase so customers can look through pictures of your past work.</span>
-                  </div>
-                  <div class="addon-price">+$65</div>
-                </div>
-
-                <div class="addon-row" id="addForm" data-title="Customer Quote & Message Box" data-cost="45" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Customer Quote & Message Form</strong>
-                    <span>A form on your page where customers type their name, phone number, and what job they need done.</span>
-                  </div>
-                  <div class="addon-price">+$45</div>
-                </div>
-
-                <div class="addon-row" id="addMap" data-title="Google Map & Reviews Box" data-cost="35" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Google Map & Customer Reviews Box</strong>
-                    <span>Shows an interactive map of your service area and highlights your 5-star reviews.</span>
-                  </div>
-                  <div class="addon-price">+$35</div>
-                </div>
-
-                <div class="addon-row" id="addComp" data-title="Company / Franchise Rule Setup" data-cost="40" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Corporate Rules & Disclaimers Setup</strong>
-                    <span>For insurance agents, financial reps, or franchises that require official company wording and approval.</span>
-                  </div>
-                  <div class="addon-price">+$40</div>
-                </div>
-
-                <div class="addon-row" id="addRush" data-title="2-Day Rush Delivery" data-cost="60" onclick="toggleAddon(this)">
-                  <div class="addon-text">
-                    <strong>✓ Fast 48-Hour Rush Build</strong>
-                    <span>Puts your website at the front of the line so it's finished in 2 days instead of 3–5 days.</span>
-                  </div>
-                  <div class="addon-price">+$60</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="step-box">
-              <div class="step-title">4. How do you want future updates handled?</div>
-              <div class="care-grid">
-                <button type="button" class="p-btn active" id="btnMonthly" onclick="setCare('monthly')">
-                  $40 / Month Plan
-                  <span>Up to 1 hr/session • 2x/wk • Max 6/mo</span>
-                </button>
-                <button type="button" class="p-btn" id="btnHourly" onclick="setCare('hourly')">
-                  $35 / Hour As-Needed
-                  <span>No monthly fee • Pay only when needed</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- LIVE RECEIPT -->
-            <div class="receipt-box">
-              <div class="receipt-items" id="itemList"></div>
-              <div class="r-total-row">
-                <span>Estimated Website Total</span>
-                <div class="r-total-num" id="totalDisplay">$350</div>
-              </div>
-              <div class="r-care-note" id="careDisplay">
-                + $40/mo Update Plan (1 hr/session, 2x/wk, 6/mo max; +$35/hr over 1 hr)
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT: CLIENT INTAKE & NETLIFY FORM -->
-          <div class="panel-card">
-            <h4>Project Questionnaire & Automatic Invoice</h4>
-            <div class="panel-sub">Fill out what you want on your website below. When you click submit, it sends your answers and calculated quote directly into your Netlify dashboard.</div>
-
-            <!-- NETLIFY NATIVE FORM SETUP -->
-            <form class="intake-form" 
-                  name="client-intake" 
-                  method="POST" 
-                  data-netlify="true" 
-                  netlify-honeypot="bot-field" 
+            <form class="intake-form"
+                  name="client-intake"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  id="clientIntakeForm"
                   onsubmit="handleNetlifySubmit(event)">
-              
-              <!-- Required for Netlify static detection and bot filtering -->
+
               <input type="hidden" name="form-name" value="client-intake" />
               <p style="display: none;">
                 <label>Don’t fill this out: <input name="bot-field" /></label>
               </p>
+              <input type="hidden" name="Interested_Style" id="hiddenStyle" value="" />
 
-              <!-- Dynamic Calculator Data -->
-              <input type="hidden" name="Selected_Reference_Style" id="hiddenStyle" value="Taylor Dunbar Professional ($350 Base)" />
-              <input type="hidden" name="Itemized_Quote_Breakdown" id="hiddenBreakdown" value="" />
-              <input type="hidden" name="Estimated_Build_Total" id="hiddenTotal" value="$350" />
-              <input type="hidden" name="Ongoing_Maintenance_Plan" id="hiddenCare" value="$40/mo Maintenance Plan" />
-
-              <div class="f-row">
-                <div class="f-group">
-                  <label>Your Full Name *</label>
-                  <input type="text" name="Client_Name" id="clientName" placeholder="e.g., John Smith" required />
-                </div>
-                <div class="f-group">
-                  <label>What Kind of Business / Work Do You Do? *</label>
-                  <input type="text" name="Occupation_or_Trade" id="clientJob" placeholder="e.g., Concrete, Lawn Care, Barber, Salon" required />
-                </div>
-              </div>
-
-              <div class="f-row">
-                <div class="f-group">
-                  <label>Your Email Address *</label>
-                  <small>We will contact you here with your confirmation</small>
-                  <input type="email" name="Client_Email" id="clientEmail" placeholder="you@example.com" required />
-                </div>
-                <div class="f-group">
-                  <label>Phone Number for Customers to Call/Text *</label>
-                  <small>This will be put on your website buttons</small>
-                  <input type="tel" name="Business_Phone" id="clientPhone" placeholder="(601) 555-0199" required />
-                </div>
-              </div>
-
-              <div class="f-row">
-                <div class="f-group">
-                  <label>Business Name & Towns You Work In *</label>
-                  <input type="text" name="Business_and_Cities" id="clientBiz" placeholder="e.g., Smith Concrete — McComb, Summit & Brookhaven" required />
-                </div>
-                <div class="f-group">
-                  <label>Which Example Website Style Do You Like Best?</label>
-                  <select name="Chosen_Template_Style" id="styleDropdown" onchange="syncDropdownStyle()">
-                    <option value="Taylor Dunbar Professional ($350 Base)">1. Taylor Dunbar Financial Style ($350)</option>
-                    <option value="Concrete & Construction ($415 w/ Gallery)">2. Concrete & Construction Style ($415)</option>
-                    <option value="Lawn & Tree Service ($550 w/ Calculator)">3. Lawn & Tree Service Style ($550)</option>
-                    <option value="Pressure Washing ($550 w/ Calculator)">4. Pressure Washing Style ($550)</option>
-                    <option value="Starter Single-Page ($250 Base)">Simple 1-Page Starter Style ($250)</option>
-                    <option value="Fully Custom Design">Something Totally Custom</option>
-                  </select>
-                </div>
+              <div class="f-group">
+                <label for="clientName">Your Name & Business Name *</label>
+                <input type="text" name="Name_and_Business" id="clientName" placeholder="e.g., John Smith — Smith Concrete" required />
               </div>
 
               <div class="f-group">
-                <label>What Colors & Style Do You Want on Your Website? *</label>
-                <small>Tell me your favorite colors or the vibe you want (clean & modern, bold & rugged, bright, dark, etc.)</small>
-                <input type="text" name="Preferred_Colors_and_Vibe" id="clientColors" placeholder="e.g., Dark green and gold, or charcoal gray and yellow" required />
+                <label for="clientPhone">Best Phone Number to Text/Call *</label>
+                <input type="tel" name="Phone" id="clientPhone" placeholder="(601) 555-0199" required />
               </div>
 
               <div class="f-group">
-                <label>Tell Me a Little Bit About You & Your Business *</label>
-                <small>How long have you been doing this? Why do customers like working with you?</small>
-                <textarea name="About_The_Business" id="clientBio" placeholder="e.g., Family-owned in McComb for 8 years, free estimates, honest pricing, licensed and insured..." required></textarea>
+                <label for="clientJob">What Does Your Business Do? *</label>
+                <input type="text" name="Business_Type" id="clientJob" placeholder="e.g., Concrete, Lawn Care, Pressure Washing" required />
               </div>
 
               <div class="f-group">
-                <label>What Services, Prices, or Links Should We Put on the Site? *</label>
-                <small>List the main jobs you do, your hours, Facebook/Instagram links, or calculator items you want</small>
-                <textarea name="Website_Information_and_Services" id="clientServices" placeholder="e.g., Driveways, house slabs, stamped patios. Open Mon-Sat 7am-6pm. Link to our Facebook page..." required></textarea>
+                <label for="packageSelect">Which Package Are You Interested In?</label>
+                <select name="Package_Interest" id="packageSelect">
+                  <option value="Starter ($250)">Starter ($250)</option>
+                  <option value="Growth ($350 - Most Popular)" selected>Growth ($350 - Most Popular)</option>
+                  <option value="Pro Lead-Gen ($550)">Pro Lead-Gen ($550)</option>
+                  <option value="Not Sure Yet — Show Me Options">Not Sure Yet — Show Me Options</option>
+                </select>
               </div>
 
               <div class="submit-area">
-                <button type="submit" class="btn-submit-main" id="submitBtn">
-                  Submit Form & Send Order to Netlify →
-                </button>
-                <button type="button" class="btn-copy-sec" id="copyBtn" onclick="copyFullOrder()">
-                  Copy Quote & Answers to Send by Text
-                </button>
-                <div class="helper-note" style="font-size: 11.5px; color: var(--muted); margin-top: 4px;">
-                  Submissions are captured instantly in your Netlify dashboard under the Forms tab and forwarded directly to drewcox9179@gmail.com.
+                <button type="submit" class="btn-submit-main" id="submitBtn">Get My Free Preview →</button>
+                <div class="form-status" id="formStatus">Something went wrong sending your form. Please try again.</div>
+                <div class="helper-note" style="font-size: 11.5px; color: var(--muted);">
+                  No spam, no obligation. Your info goes straight to Drew Cox.
                 </div>
               </div>
             </form>
@@ -1537,39 +1415,107 @@
         </div>
       </section>
     </div>
+
+    <footer class="site-footer">
+      <div>© Drew Cox Web Design • McComb & South Mississippi</div>
+      <button type="button" class="footer-link" onclick="openOnboarding()">Already a Client? Complete Your Design Onboarding</button>
+    </footer>
   </div>
 
-  <!-- SUCCESS CONFIRMATION MODAL -->
+  <!-- SUCCESS MODAL -->
   <div class="modal-overlay" id="successModal">
     <div class="modal-card">
       <div class="icon-check">✓</div>
-      <h3>Project Submitted!</h3>
-      <p>Thank you! Your website request and itemized quote have been sent directly to Drew Cox.</p>
-      
-      <div class="submitted-summary">
-        <div><strong>Selected Style:</strong> <span id="modalStyle">-</span></div>
-        <div><strong>Estimated Total:</strong> <span id="modalTotal" style="color: var(--cta); font-weight: 700;">-</span></div>
-        <div><strong>Maintenance:</strong> <span id="modalCare">-</span></div>
+      <h3 id="successTitle">Request Sent!</h3>
+      <p id="successMsg">Thanks! I'll text or call you shortly with your free preview.</p>
+      <div class="submitted-summary" id="successSummary">
+        <div><strong>Package:</strong> <span id="modalPackage">-</span></div>
       </div>
+      <button type="button" class="btn-solid-orange" style="width: 100%; border: none;" onclick="closeModal('successModal')">Done & Close</button>
+    </div>
+  </div>
 
-      <button type="button" class="btn-solid-orange" style="width: 100%; border: none;" onclick="closeModal()">
-        Done & Close
-      </button>
+  <!-- DESIGN ONBOARDING MODAL (for existing clients) -->
+  <div class="modal-overlay" id="onboardModal">
+    <div class="modal-card onboard">
+      <button type="button" class="modal-close-x" onclick="closeModal('onboardModal')" aria-label="Close">×</button>
+      <h3>Design Onboarding</h3>
+      <p>Welcome aboard! Tell me how you want your site to look and I'll get started.</p>
+
+      <form class="intake-form"
+            name="design-onboarding"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            id="onboardForm"
+            onsubmit="handleOnboardSubmit(event)">
+        <input type="hidden" name="form-name" value="design-onboarding" />
+        <p style="display: none;"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+        <div class="f-row">
+          <div class="f-group">
+            <label>Your Name & Business Name *</label>
+            <input type="text" name="Name_and_Business" placeholder="e.g., John Smith — Smith Concrete" required />
+          </div>
+          <div class="f-group">
+            <label>Phone Number *</label>
+            <input type="tel" name="Phone" placeholder="(601) 555-0199" required />
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label>Favorite Colors *</label>
+          <input type="text" name="Preferred_Colors" placeholder="e.g., Dark green and gold, or charcoal gray and yellow" required />
+        </div>
+
+        <div class="f-group">
+          <label>Style / Vibe</label>
+          <select name="Style_Vibe">
+            <option value="Clean & modern">Clean & modern</option>
+            <option value="Bold & rugged">Bold & rugged</option>
+            <option value="Bright & friendly">Bright & friendly</option>
+            <option value="Dark & premium">Dark & premium</option>
+            <option value="Not sure — your call">Not sure — your call</option>
+          </select>
+        </div>
+
+        <div class="f-group">
+          <label>Which Demo Style Do You Like Best?</label>
+          <select name="Demo_Preference">
+            <option value="Taylor Dunbar Financial (professional)">Taylor Dunbar Financial (professional)</option>
+            <option value="Concrete / Contracting">Concrete / Contracting</option>
+            <option value="Lawn & Tree Service">Lawn & Tree Service</option>
+            <option value="Pressure Washing">Pressure Washing</option>
+            <option value="Something totally custom">Something totally custom</option>
+          </select>
+        </div>
+
+        <div class="f-group">
+          <label>Extra Notes</label>
+          <small>Services, hours, towns you serve, Facebook/Instagram links, anything else.</small>
+          <textarea name="Extra_Notes" placeholder="Anything else I should know..."></textarea>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="btn-submit-main" id="onboardBtn">Send My Design Details →</button>
+          <div class="form-status" id="onboardStatus">Something went wrong sending your form. Please try again.</div>
+        </div>
+      </form>
     </div>
   </div>
 
   <!-- =================================================================
-       VIEW 2: SEPARATE PAGE — IRONCLAD CONCRETE & CONSTRUCTION ($415)
+       VIEW 2: CONCEPT DEMO — IRONCLAD CONCRETE & CONSTRUCTION
        ================================================================= -->
   <div id="view-concrete" class="page-view" style="background: #f4f4f5;">
     <div class="demo-return-bar">
       <div class="left-info">
-        <span class="demo-pill-ai">AI-Generated Sample Company</span>
-        <span><strong>Price Reference: $415</strong> (2-Page Standard Website $350 + Work Photo Gallery $65)</span>
+        <span class="demo-pill-ai">Interactive Industry Concept Demo</span>
+        <span>Sample company — this style can be customized for your business at <strong>any package</strong>.</span>
       </div>
       <div class="demo-bar-btns">
         <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
-        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(1)">Choose This $415 Style & Customize Quote →</button>
+        <button type="button" class="btn-pick-this" onclick="pickDemo('Concrete / Contracting')">Get This Style For My Business →</button>
       </div>
     </div>
 
@@ -1614,7 +1560,7 @@
     <div id="concrete-p2" class="demo-subpage">
       <div class="demo-section">
         <h3 style="font-family: var(--serif); font-size: 30px; margin-bottom: 6px;">Recent Concrete Projects Gallery</h3>
-        <p style="color: #52525b; margin-bottom: 20px;">This page demonstrates the <strong>+$65 Work Photo Gallery add-on</strong> included in the $415 quote.</p>
+        <p style="color: #52525b; margin-bottom: 20px;">This page shows the <strong>Work Photo Gallery</strong> section your customers can browse before they call.</p>
         <div class="demo-grid-3">
           <div class="demo-card">
             <div style="background: #27272a; color: #eab308; height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px;">[Before / After Photo: 30x40 Shop Slab]</div>
@@ -1637,17 +1583,17 @@
   </div>
 
   <!-- =================================================================
-       VIEW 3: SEPARATE PAGE — PINE BELT LAWN & TREE CARE ($550)
+       VIEW 3: CONCEPT DEMO — PINE BELT LAWN & TREE CARE
        ================================================================= -->
   <div id="view-lawn" class="page-view" style="background: #f0fdf4;">
     <div class="demo-return-bar">
       <div class="left-info">
-        <span class="demo-pill-ai">AI-Generated Sample Company</span>
-        <span><strong>Price Reference: $550</strong> (3-Page Website $450 + Interactive Customer Price Calculator $120, Bundled at $550)</span>
+        <span class="demo-pill-ai">Interactive Industry Concept Demo</span>
+        <span>Sample company — this style can be customized for your business at <strong>any package</strong>.</span>
       </div>
       <div class="demo-bar-btns">
         <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
-        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(2)">Choose This $550 Style & Customize Quote →</button>
+        <button type="button" class="btn-pick-this" onclick="pickDemo('Lawn & Tree Service')">Get This Style For My Business →</button>
       </div>
     </div>
 
@@ -1731,12 +1677,12 @@
   <div id="view-wash" class="page-view" style="background: #f0f9ff;">
     <div class="demo-return-bar">
       <div class="left-info">
-        <span class="demo-pill-ai">AI-Generated Sample Company</span>
-        <span><strong>Price Reference: $550</strong> (3-Page Website $450 + Interactive Wash Calculator $120, Bundled at $550)</span>
+        <span class="demo-pill-ai">Interactive Industry Concept Demo</span>
+        <span>Sample company — this style can be customized for your business at <strong>any package</strong>.</span>
       </div>
       <div class="demo-bar-btns">
         <button type="button" class="btn-back-home" onclick="openView('view-home')">← Back to Drew's Portfolio</button>
-        <button type="button" class="btn-pick-this" onclick="loadShowcaseToQuote(3)">Choose This $550 Style & Customize Quote →</button>
+        <button type="button" class="btn-pick-this" onclick="pickDemo('Pressure Washing')">Get This Style For My Business →</button>
       </div>
     </div>
 
@@ -1780,8 +1726,173 @@
       </div>
     </div>
 
+
     <div id="wash-p3" class="demo-subpage">
       <div class="demo-section">
         <div class="demo-calc-box">
           <h3 style="font-family: var(--serif); font-size: 26px; color: #0c4a6e; margin-bottom: 6px;">Instant Exterior Wash Price Calculator</h3>
-          <p style="font-size: 13.5px; color: #52525b; margin-bottom: 18px;">Try clicking the options below—this is the exact kind of customer
+          <p style="font-size: 13.5px; color: #52525b; margin-bottom: 18px;">Try clicking the options below—this is the exact kind of customer quote tool a <strong>Growth or Pro</strong> site can include:</p>
+
+          <div style="display: grid; gap: 14px;">
+            <div>
+              <label style="font-weight: 700; font-size: 13.5px; display: block; margin-bottom: 4px;">1. Select Your Home Size:</label>
+              <select id="demoWashSize" onchange="calcDemoWash()" style="width: 100%; padding: 10px; border: 2px solid #0c4a6e; border-radius: 6px; font-size: 14px;">
+                <option value="175">Small Home (Under 1,500 sq ft) — $175</option>
+                <option value="250" selected>Medium Home (1,500–2,500 sq ft) — $250</option>
+                <option value="350">Large Home (2,500–3,500 sq ft) — $350</option>
+                <option value="475">Extra Large (3,500+ sq ft) — $475</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-weight: 700; font-size: 13.5px; display: block; margin-bottom: 6px;">2. Add Extra Cleaning Services:</label>
+              <label style="display: block; margin-bottom: 6px; cursor: pointer;"><input type="checkbox" id="washDrive" value="100" onchange="calcDemoWash()"> Driveway Surface Cleaning (+$100)</label>
+              <label style="display: block; margin-bottom: 6px; cursor: pointer;"><input type="checkbox" id="washRoof" value="225" onchange="calcDemoWash()"> No-Pressure Roof Streak Treatment (+$225)</label>
+              <label style="display: block; cursor: pointer;"><input type="checkbox" id="washGutter" value="60" onchange="calcDemoWash()"> Gutter Face Brightening (+$60)</label>
+            </div>
+
+            <div style="background: #0c4a6e; color: #fff; padding: 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+              <span>Estimated Customer Job Price:</span>
+              <strong id="demoWashTotal" style="font-family: var(--serif); font-size: 32px; color: #38bdf8;">$250</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ---------- View switching ---------- */
+    function openView(id) {
+      document.querySelectorAll('.page-view').forEach(function (v) { v.classList.remove('active-view'); });
+      var target = document.getElementById(id);
+      if (target) target.classList.add('active-view');
+      window.scrollTo(0, 0);
+    }
+
+    function switchSubTab(prefix, n, btn) {
+      var view = document.getElementById('view-' + prefix);
+      if (!view) return;
+      view.querySelectorAll('.demo-subpage').forEach(function (p) { p.classList.remove('active-subpage'); });
+      var page = document.getElementById(prefix + '-p' + n);
+      if (page) page.classList.add('active-subpage');
+      view.querySelectorAll('.demo-tab-btn').forEach(function (b) { b.classList.remove('active-tab'); });
+      if (btn) btn.classList.add('active-tab');
+      window.scrollTo(0, 0);
+    }
+
+    /* ---------- Demo calculators ---------- */
+    function calcDemoLawn() {
+      var total = parseInt(document.getElementById('demoLawnSize').value, 10) || 0;
+      ['lawnHedge', 'lawnMulch', 'lawnLimb'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.checked) total += parseInt(el.value, 10);
+      });
+      document.getElementById('demoLawnTotal').textContent = '$' + total;
+    }
+
+    function calcDemoWash() {
+      var total = parseInt(document.getElementById('demoWashSize').value, 10) || 0;
+      ['washDrive', 'washRoof', 'washGutter'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.checked) total += parseInt(el.value, 10);
+      });
+      document.getElementById('demoWashTotal').textContent = '$' + total;
+    }
+
+    /* ---------- Jump to the form ---------- */
+    function scrollToForm() {
+      openView('view-home');
+      var sec = document.getElementById('preview-sec');
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(function () {
+        var f = document.getElementById('clientName');
+        if (f) f.focus({ preventScroll: true });
+      }, 500);
+    }
+
+    function choosePackage(value) {
+      document.getElementById('packageSelect').value = value;
+      scrollToForm();
+    }
+
+    function pickDemo(styleName) {
+      document.getElementById('hiddenStyle').value = styleName;
+      scrollToForm();
+    }
+
+    /* ---------- Modals ---------- */
+    function closeModal(id) {
+      var m = document.getElementById(id || 'successModal');
+      if (m) m.classList.remove('active');
+    }
+
+    function openOnboarding() {
+      document.getElementById('onboardModal').classList.add('active');
+    }
+
+    document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('active'); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.active').forEach(function (m) { m.classList.remove('active'); });
+    });
+
+    /* ---------- Netlify form submits (AJAX, stay on page) ---------- */
+    function postNetlify(form) {
+      return fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function (res) { if (!res.ok) throw new Error('Submit failed'); });
+    }
+
+    function handleNetlifySubmit(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = document.getElementById('submitBtn');
+      var status = document.getElementById('formStatus');
+      status.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      postNetlify(form).then(function () {
+        document.getElementById('modalPackage').textContent = document.getElementById('packageSelect').value;
+        document.getElementById('successTitle').textContent = 'Request Sent!';
+        document.getElementById('successMsg').textContent = "Thanks! I'll text or call you shortly with your free preview.";
+        document.getElementById('successSummary').style.display = 'grid';
+        document.getElementById('successModal').classList.add('active');
+        form.reset();
+        document.getElementById('hiddenStyle').value = '';
+      }).catch(function () {
+        status.style.display = 'block';
+      }).then(function () {
+        btn.disabled = false;
+        btn.textContent = 'Get My Free Preview →';
+      });
+    }
+
+    function handleOnboardSubmit(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = document.getElementById('onboardBtn');
+      var status = document.getElementById('onboardStatus');
+      status.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      postNetlify(form).then(function () {
+        closeModal('onboardModal');
+        document.getElementById('successTitle').textContent = 'Details Received!';
+        document.getElementById('successMsg').textContent = "Thanks! I have your design details and will get started on your site.";
+        document.getElementById('successSummary').style.display = 'none';
+        document.getElementById('successModal').classList.add('active');
+        form.reset();
+      }).catch(function () {
+        status.style.display = 'block';
+      }).then(function () {
+        btn.disabled = false;
+        btn.textContent = 'Send My Design Details →';
+      });
+    }
+  </script>
+</body>
+</html>
