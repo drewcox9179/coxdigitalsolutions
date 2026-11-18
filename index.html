@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drew Cox Web Design — Custom Websites for Local Businesses</title>
+  <title>Drew Cox Web Design | Websites for Local Businesses in McComb and South Mississippi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Caveat:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f1f5f9;
@@ -1099,6 +1099,94 @@
       .hero h2 { font-size: 32px; }
       .demo-hero h2 { font-size: 32px; }
     }
+  
+    /* ==========================================
+       PERSONAL HOMEPAGE (scoped to #view-home)
+       ========================================== */
+    #view-home { background:#f6efe3; color:#2b2118; font-size:17px; line-height:1.65; }
+    #view-home .hm-hand { font-family:'Caveat',cursive; font-size:25px; color:#b4531f; line-height:1; margin-bottom:10px; }
+    #view-home h2, #view-home h3, #view-home h4 { font-family:'Fraunces',Georgia,serif; font-weight:600; letter-spacing:-0.01em; color:#2b2118; }
+    #view-home a { color:inherit; }
+    .hm-nav { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; max-width:1040px; margin:0 auto; padding:22px 24px; }
+    .hm-brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-family:'Fraunces',serif; font-weight:600; font-size:20px; }
+    .hm-brand em { font-style:italic; font-weight:400; color:#6b5646; }
+    .hm-mono { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#2b2118; color:#f6efe3; font-size:16px; font-family:'Caveat',cursive; font-weight:600; }
+    .hm-nav nav { display:flex; gap:22px; align-items:center; font-size:15px; }
+    .hm-nav nav a { text-decoration:none; }
+    .hm-nav nav a:hover { color:#b4531f; }
+    .hm-nav .hm-nav-cta { border:1.5px solid #2b2118; padding:7px 16px; border-radius:30px; }
+    .hm-nav .hm-nav-cta:hover { background:#2b2118; color:#f6efe3; }
+    .hm-hero, .hm-note, .hm-sec { max-width:1040px; margin:0 auto; padding:0 24px; }
+    .hm-hero { padding-top:56px; padding-bottom:64px; }
+    .hm-hero h2 { font-size:clamp(34px,5.6vw,60px); line-height:1.08; max-width:18em; margin-bottom:24px; }
+    .hm-hero h2 span { font-style:italic; color:#b4531f; }
+    .hm-lead { font-size:19px; color:#4d3f33; max-width:36em; margin-bottom:30px; }
+    .hm-actions { display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+    .hm-btn { display:inline-block; background:#b4531f; color:#fff8ef !important; border:0; padding:14px 26px; border-radius:40px; font:600 16px 'DM Sans',sans-serif; text-decoration:none; cursor:pointer; }
+    .hm-btn:hover { background:#8f3f14; }
+    .hm-btn.small { padding:10px 20px; font-size:14.5px; }
+    .hm-link { background:none; border:0; border-bottom:1.5px solid #b4531f; color:#2b2118; font:500 15px 'DM Sans',sans-serif; padding:2px 0; cursor:pointer; text-decoration:none; }
+    .hm-link:hover { color:#b4531f; }
+    .hm-facts { list-style:none; display:flex; gap:12px 34px; flex-wrap:wrap; margin-top:44px; padding-top:24px; border-top:1px dashed #cdbba5; font-size:15px; color:#5a4a3d; }
+    .hm-facts b { color:#2b2118; }
+    .hm-note { padding-bottom:70px; }
+    .hm-note-card { background:#fffaf1; border:1px solid #e6d8c3; border-radius:6px; padding:34px 38px; max-width:640px; transform:rotate(-0.6deg); box-shadow:0 8px 24px rgba(80,50,20,.08); }
+    .hm-note-card p { margin-bottom:12px; }
+    .hm-note-card .hm-hand { margin-bottom:10px; }
+    .hm-sign { font-family:'Caveat',cursive; font-size:32px; color:#2b2118; margin:6px 0 0 !important; }
+    .hm-sec { padding-top:30px; padding-bottom:70px; }
+    .hm-head { max-width:620px; margin-bottom:34px; }
+    .hm-head h3 { font-size:clamp(28px,4vw,40px); line-height:1.15; margin-bottom:12px; }
+    .hm-head p:last-child { color:#4d3f33; }
+    .hm-feature { display:grid; grid-template-columns:200px 1fr; gap:0; background:#fffaf1; border:1px solid #e6d8c3; border-radius:10px; overflow:hidden; margin-bottom:22px; }
+    .hm-feature-tag { background:linear-gradient(160deg,#1f3a6e,#2f5bb0); color:#fff; padding:24px; font-family:'Caveat',cursive; font-size:28px; line-height:1.1; display:flex; align-items:flex-end; }
+    .hm-feature-body { padding:26px 28px; }
+    .hm-feature-body h4 { font-size:24px; margin-bottom:8px; }
+    .hm-feature-body p { color:#4d3f33; margin-bottom:16px; }
+    .hm-row { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+    .hm-demos { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .hm-demo { background:#fffaf1; border:1px solid #e6d8c3; border-top-width:5px; border-radius:8px; padding:22px; display:flex; flex-direction:column; gap:10px; }
+    .hm-demo.concrete { border-top-color:#ca8a04; } .hm-demo.lawn { border-top-color:#2f8a4a; } .hm-demo.wash { border-top-color:#0b78b0; }
+    .hm-demo h4 { font-size:20px; }
+    .hm-demo p { font-size:15px; color:#4d3f33; flex-grow:1; }
+    .hm-fine { margin-top:18px; font-size:14.5px; color:#6b5646; font-style:italic; }
+    .hm-paper { max-width:none; background:#efe4d2; padding-top:64px; }
+    .hm-paper > * { max-width:992px; margin-left:auto; margin-right:auto; }
+    .hm-prices { list-style:none; display:grid; gap:0; margin-bottom:40px; }
+    .hm-prices li { display:grid; grid-template-columns:130px 1fr; gap:24px; padding:26px 0; border-top:1px solid #cdbba5; }
+    .hm-prices li:last-child { border-bottom:1px solid #cdbba5; }
+    .hm-price { font-family:'Fraunces',serif; font-size:44px; font-weight:600; line-height:1; color:#2b2118; }
+    .hm-prices li.best .hm-price { color:#b4531f; }
+    .hm-prices h4 { font-size:22px; margin-bottom:6px; }
+    .hm-prices p { color:#4d3f33; margin-bottom:10px; max-width:42em; }
+    .hm-pop { font-family:'Caveat',cursive; font-weight:600; font-size:22px; color:#b4531f; margin-left:8px; }
+    .hm-after { background:#fffaf1; border:1px solid #e0d1ba; border-radius:8px; padding:26px 28px; }
+    .hm-after h4 { font-size:21px; margin-bottom:6px; }
+    .hm-after > p { margin-bottom:18px; color:#4d3f33; }
+    .hm-after-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .hm-after-grid b { display:block; font-family:'Fraunces',serif; font-size:18px; margin-bottom:4px; }
+    .hm-after-grid span { font-size:15px; color:#4d3f33; }
+    .hm-why { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; }
+    .hm-why h4 { font-size:20px; margin-bottom:8px; }
+    .hm-why p { font-size:15.5px; color:#4d3f33; }
+    .hm-contact { padding-bottom:90px; }
+    .hm-contact-grid { display:grid; grid-template-columns:5fr 6fr; gap:48px; align-items:start; }
+    .hm-contact h3 { font-size:clamp(28px,4vw,40px); line-height:1.15; margin-bottom:14px; }
+    .hm-contact-grid > div:first-child > p:last-child { color:#4d3f33; }
+    #view-home .panel-card { background:#fffaf1; border:1px solid #e0d1ba; border-radius:10px; box-shadow:0 10px 28px rgba(80,50,20,.08); padding:28px; }
+    #view-home .intake-form label { color:#2b2118; font-weight:600; font-size:14.5px; }
+    #view-home .intake-form input, #view-home .intake-form select { border:1.5px solid #cdbba5; border-radius:6px; background:#fff; }
+    #view-home .btn-submit-main { background:#b4531f; border:0; border-radius:40px; color:#fff8ef; box-shadow:none; text-transform:none; letter-spacing:0; font-size:16px; }
+    #view-home .btn-submit-main:hover { background:#8f3f14; }
+    .hm-footer { background:#2b2118; color:#e9dccb; padding:28px max(24px,calc((100% - 992px)/2)); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:14.5px; }
+    .hm-footer .footer-link { color:#e9dccb; background:none; border:0; text-decoration:underline; cursor:pointer; font:inherit; }
+    @media (max-width:820px){
+      .hm-feature { grid-template-columns:1fr; } .hm-feature-tag { padding:14px 24px; }
+      .hm-demos,.hm-why,.hm-contact-grid,.hm-after-grid { grid-template-columns:1fr; }
+      .hm-prices li { grid-template-columns:1fr; gap:8px; }
+      .hm-note-card { transform:none; padding:26px; }
+      .hm-nav nav a:not(.hm-nav-cta){ display:none; }
+    }
   </style>
 </head>
 <body>
@@ -1106,263 +1194,142 @@
   <!-- =================================================================
        VIEW 1: HOMEPAGE
        ================================================================= -->
-  <div id="view-home" class="page-view active-view">
-    <nav class="top-nav">
-      <div class="top-nav-inner">
-        <div class="brand-Group">
-          <h1>Drew Cox Web Design</h1>
-          <span class="badge-loc">McComb & South MS</span>
-        </div>
-        <div class="nav-links">
-          <a href="#showcase-sec">See Sample Websites</a>
-          <a href="#pricing-sec">Simple Pricing</a>
-          <a href="#preview-sec" class="nav-cta">Get My Free Preview →</a>
-        </div>
-      </div>
-    </nav>
+<div id="view-home" class="page-view active-view">
+    <header class="hm-nav">
+      <a class="hm-brand" href="#top"><span class="hm-mono">dc</span><span>Drew Cox <em>Web Design</em></span></a>
+      <nav>
+        <a href="#work">My work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#preview-sec" class="hm-nav-cta">Say hi</a>
+      </nav>
+    </header>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <h2>Clean, Fast Websites Built for Local Businesses.</h2>
-          <p>No confusing tech talk or $2,000 agency bills. Click through the example websites below, pick the package that fits, and tell me about your business in 60 seconds. I'll build you a live preview to test on your phone.</p>
-          <div class="hero-btns">
-            <a href="#showcase-sec" class="btn-solid-orange">Click Through Example Sites ↓</a>
-            <a href="#preview-sec" class="btn-solid-white">Get My Free Preview</a>
-          </div>
+    <main id="top">
+      <section class="hm-hero">
+        <p class="hm-hand">McComb, Mississippi</p>
+        <h2>Hi, I am Drew. I build <span>real websites</span> for the businesses in our corner of Mississippi.</h2>
+        <p class="hm-lead">If you work hard, do good work and people already talk about you, your website should show it. I will build it myself, send you a preview you can try on your own phone, and text you back like a normal person. No agency, no jargon, no runaround.</p>
+        <div class="hm-actions">
+          <a href="#preview-sec" class="hm-btn">Get a free preview</a>
+          <a href="#work" class="hm-link">See what I have built &darr;</a>
         </div>
-        <div class="hero-highlights">
-          <div class="hl-item">
-            <div class="hl-icon">✓</div>
-            <div><strong>Live in 5–7 Days:</strong> Your business gets online fast without dragging out for months.</div>
-          </div>
-          <div class="hl-item">
-            <div class="hl-icon">✓</div>
-            <div><strong>Built for Cell Phones:</strong> Customers can tap one button on their phone to call, text, or request a quote.</div>
-          </div>
-          <div class="hl-item">
-            <div class="hl-icon">✓</div>
-            <div><strong>Upfront Flat Prices ($250–$550):</strong> You see the exact cost before we start—zero surprise fees.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <ul class="hm-facts">
+          <li><b>5 to 7 days</b> from hello to live</li>
+          <li><b>Made for phones</b> so people can tap to call or text</li>
+          <li><b>$250 to $550</b> flat, agreed before we start</li>
+        </ul>
+      </section>
 
-    <div class="container">
-      <!-- SECTION 1: SHOWCASE -->
-      <section id="showcase-sec">
-        <div class="section-header">
-          <span class="eyebrow">Step 1 • Explore Live & Sample Websites</span>
-          <h3>See What a Website Built for Your Trade Can Look Like</h3>
-          <p>Browse the examples below. Any style can be customized for your business at any package—pricing is separate, in Step 2.</p>
+      <section class="hm-note">
+        <div class="hm-note-card">
+          <p class="hm-hand">A quick note from me</p>
+          <p>I am a local guy who builds websites for local businesses, and I would rather talk to you than send you a form letter. Tell me a little about what you do and I will put together a free preview, built for your business, so you can see it before you decide anything.</p>
+          <p class="hm-sign">- Drew</p>
+        </div>
+      </section>
+
+      <section id="work" class="hm-sec">
+        <div class="hm-head">
+          <p class="hm-hand">Work I have done</p>
+          <h3>One real client, and some ideas for your trade.</h3>
+          <p>Taylor Dunbar is a real client and his site is live today. The other three are concept sites I made for sample companies, so you can click around and picture your own business in the same spot.</p>
         </div>
 
-        <div class="ai-notice">
-          <span style="font-size: 22px;">💡</span>
+        <article class="hm-feature">
+          <div class="hm-feature-tag taylor">Live client site</div>
+          <div class="hm-feature-body">
+            <h4>Taylor Dunbar, Financial Services</h4>
+            <p>A real website for Taylor Dunbar's Primerica office serving South Mississippi. It has a compound growth calculator, event registration, and a lead form that works well on a phone.</p>
+            <div class="hm-row">
+              <a class="hm-btn small" href="https://taylordunbarfinancial.com" target="_blank" rel="noopener">Visit Taylor's site &nearr;</a>
+              <button type="button" class="hm-link" onclick="pickDemo('Professional Services (like Taylor Dunbar)')">Something like this for me</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="hm-demos">
+          <article class="hm-demo concrete">
+            <h4>Concrete and contracting</h4>
+            <p>Charcoal and gold, with a gallery for finished slabs, driveways and patios. Sample company: Ironclad Concrete.</p>
+            <div class="hm-row"><button type="button" class="hm-btn small" onclick="openView('view-concrete')">Open the concept</button><button type="button" class="hm-link" onclick="pickDemo('Concrete / Contracting')">I want this style</button></div>
+          </article>
+          <article class="hm-demo lawn">
+            <h4>Lawn and tree service</h4>
+            <p>Fresh green, with a yard size calculator so homeowners get a rough price in seconds. Sample company: Pine Belt Lawn and Tree.</p>
+            <div class="hm-row"><button type="button" class="hm-btn small" onclick="openView('view-lawn')">Open the concept</button><button type="button" class="hm-link" onclick="pickDemo('Lawn & Tree Service')">I want this style</button></div>
+          </article>
+          <article class="hm-demo wash">
+            <h4>Pressure washing</h4>
+            <p>Clean ocean blue, with an estimator for the house, driveway and roof. Sample company: Gulf South Pressure Washing.</p>
+            <div class="hm-row"><button type="button" class="hm-btn small" onclick="openView('view-wash')">Open the concept</button><button type="button" class="hm-link" onclick="pickDemo('Pressure Washing')">I want this style</button></div>
+          </article>
+        </div>
+        <p class="hm-fine">Any of these styles can be changed to fit your business on any package. Colors, wording and photos all come from you.</p>
+      </section>
+
+      <section id="pricing" class="hm-sec hm-paper">
+        <div class="hm-head">
+          <p class="hm-hand">Pricing</p>
+          <h3>Flat prices, said out loud.</h3>
+          <p>You will know the cost before I start, and it will not change. Every package works for any kind of business.</p>
+        </div>
+
+        <ol class="hm-prices">
+          <li>
+            <div class="hm-price">$250</div>
+            <div>
+              <h4>Starter</h4>
+              <p>A clean one-page site so people know you are the real deal and can reach you fast. It has tap-to-call and text buttons, a layout that works great on phones, and a simple contact form.</p>
+              <button type="button" class="hm-link" onclick="choosePackage('Starter ($250)')">Start with this one</button>
+            </div>
+          </li>
+          <li class="best">
+            <div class="hm-price">$350</div>
+            <div>
+              <h4>Growth <span class="hm-pop">most people pick this</span></h4>
+              <p>Everything in Starter, plus a custom calculator or quote estimator, a photo gallery, a Google Maps and reviews section, and local search setup.</p>
+              <button type="button" class="hm-link" onclick="choosePackage('Growth ($350 - Most Popular)')">Start with this one</button>
+            </div>
+          </li>
+          <li>
+            <div class="hm-price">$550</div>
+            <div>
+              <h4>Pro</h4>
+              <p>A full build with several sections, a custom job-quote form, before and after photos, Google Business Profile help, and priority turnaround.</p>
+              <button type="button" class="hm-link" onclick="choosePackage('Pro Lead-Gen ($550)')">Start with this one</button>
+            </div>
+          </li>
+        </ol>
+
+        <div class="hm-after">
+          <h4>After your site is live</h4>
+          <p>Need new photos, a new price or a different phone number later? Just text me. You can pick either way to handle updates.</p>
+          <div class="hm-after-grid">
+            <div><b>$40 a month</b><span>Covers small tweaks like new photos, price changes and text edits. It includes up to 1 hour per session, 2 sessions a week and 6 sessions a month. Anything past an hour is $35 an hour.</span></div>
+            <div><b>$35 an hour, as needed</b><span>No monthly plan. You pay only when you want something changed.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hm-sec">
+        <div class="hm-head">
+          <p class="hm-hand">Why people work with me</p>
+          <h3>Simple on purpose.</h3>
+        </div>
+        <div class="hm-why">
+          <div><h4>Built for thumbs</h4><p>Most people look you up on their phone, so every site has tap-to-call and tap-to-text buttons right where they need them.</p></div>
+          <div><h4>Fewer wasted calls</h4><p>Your quote form asks for the job, the location and what they need, so you know what the call is about before you pick up.</p></div>
+          <div><h4>Fast, with no runaround</h4><p>You send me the basics, I build a preview you can test on your phone, and we can be live inside a week.</p></div>
+        </div>
+      </section>
+
+      <section id="preview-sec" class="hm-sec hm-contact">
+        <div class="hm-contact-grid">
           <div>
-            <strong>About These Examples:</strong> Taylor Dunbar's website is a real, live client business. Concrete, Lawn & Tree, and Pressure Washing are <strong>interactive industry concept demos</strong> with sample companies, built to show you what's possible for your trade.
+            <p class="hm-hand">Let us talk</p>
+            <h3>Tell me about your business.</h3>
+            <p>Four quick questions and I will text or call you back with a free preview. There is nothing to pay up front and no pressure either way.</p>
           </div>
-        </div>
-
-        <div class="showcase-grid">
-          <!-- CARD 1: TAYLOR DUNBAR (LIVE CLIENT) -->
-          <div class="site-card">
-            <div class="site-card-banner banner-taylor">
-              <h4>Taylor Dunbar — Financial Services</h4>
-            </div>
-            <div class="site-card-body">
-              <div class="site-badge-row">
-                <span class="tag-live">★ Verified Live Client</span>
-              </div>
-              <p>A real, working website for Taylor Dunbar's Primerica office serving South Mississippi—live on the web today.</p>
-              <ul class="what-you-get">
-                <li><strong>Interactive Compound Growth Calculator</strong></li>
-                <li><strong>Event Registration</strong></li>
-                <li><strong>Mobile-First Lead Capture</strong></li>
-              </ul>
-            </div>
-            <div class="site-card-actions">
-              <a href="https://taylordunbarfinancial.com" target="_blank" rel="noopener" class="btn-preview">Visit Taylor's Live Site ↗</a>
-              <button type="button" class="btn-use-quote" onclick="pickDemo('Professional Services (like Taylor Dunbar)')">Get a Site Like This ↓</button>
-            </div>
-          </div>
-
-          <!-- CARD 2: CONCRETE -->
-          <div class="site-card">
-            <div class="site-card-banner banner-concrete">
-              <h4>Concrete / Contracting</h4>
-            </div>
-            <div class="site-card-body">
-              <div class="site-badge-row">
-                <span class="tag-demo">Interactive Industry Concept Demo</span>
-              </div>
-              <p>A bold charcoal-and-gold contractor layout built to show off finished slabs, driveways, and patios with a work photo gallery.</p>
-              <ul class="what-you-get">
-                <li><strong>Ironclad Concrete & Slabs</strong> — sample company</li>
-                <li>Services page + project photo gallery</li>
-              </ul>
-            </div>
-            <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-concrete')">Open Demo →</button>
-              <button type="button" class="btn-use-quote" onclick="pickDemo('Concrete / Contracting')">Get This Style ↓</button>
-            </div>
-          </div>
-
-          <!-- CARD 3: LAWN & TREE -->
-          <div class="site-card">
-            <div class="site-card-banner banner-lawn">
-              <h4>Lawn & Tree Service</h4>
-            </div>
-            <div class="site-card-body">
-              <div class="site-badge-row">
-                <span class="tag-demo">Interactive Industry Concept Demo</span>
-              </div>
-              <p>A fresh forest-green site where homeowners pick their yard size and tree needs to see an instant price estimate.</p>
-              <ul class="what-you-get">
-                <li><strong>Pine Belt Lawn & Tree Care</strong> — sample company</li>
-                <li>Working yard price calculator</li>
-              </ul>
-            </div>
-            <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-lawn')">Open Demo →</button>
-              <button type="button" class="btn-use-quote" onclick="pickDemo('Lawn & Tree Service')">Get This Style ↓</button>
-            </div>
-          </div>
-
-          <!-- CARD 4: PRESSURE WASHING -->
-          <div class="site-card">
-            <div class="site-card-banner banner-wash">
-              <h4>Pressure Washing</h4>
-            </div>
-            <div class="site-card-body">
-              <div class="site-badge-row">
-                <span class="tag-demo">Interactive Industry Concept Demo</span>
-              </div>
-              <p>A crisp ocean-blue exterior cleaning site with an interactive house, driveway, and roof price estimator.</p>
-              <ul class="what-you-get">
-                <li><strong>Gulf South Pressure Washing</strong> — sample company</li>
-                <li>Working wash price calculator</li>
-              </ul>
-            </div>
-            <div class="site-card-actions">
-              <button type="button" class="btn-preview" onclick="openView('view-wash')">Open Demo →</button>
-              <button type="button" class="btn-use-quote" onclick="pickDemo('Pressure Washing')">Get This Style ↓</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 2: PRICING -->
-      <section id="pricing-sec">
-        <div class="section-header">
-          <span class="eyebrow">Step 2 • Plain-English Pricing</span>
-          <h3>Three Packages. Any Industry. One Flat Price.</h3>
-          <p>Every package works for any trade—pick the one that fits where your business is today.</p>
-        </div>
-
-        <div class="tiers-row">
-          <div class="tier-box">
-            <div class="tier-top">
-              <h4>Starter Landing Page</h4>
-              <div class="big-price">$250</div>
-              <p>A clean, simple page so customers know you're legit and can reach you fast.</p>
-            </div>
-            <ul class="plain-list">
-              <li><strong>Clean 1-page scrolling site</strong></li>
-              <li><strong>Sticky click-to-call/text buttons</strong></li>
-              <li><strong>Mobile-optimized layout</strong></li>
-              <li><strong>Basic lead form</strong></li>
-            </ul>
-            <button type="button" class="btn-tier" onclick="choosePackage('Starter ($250)')">Choose Starter ↓</button>
-          </div>
-
-          <div class="tier-box featured">
-            <span class="popular-badge">★ Most Popular</span>
-            <div class="tier-top">
-              <h4>Growth Business Package</h4>
-              <div class="big-price">$350</div>
-              <p>For growing local businesses that want the site to do more of the selling.</p>
-            </div>
-            <ul class="plain-list">
-              <li><strong>Everything in Starter</strong></li>
-              <li><strong>Custom interactive calculator or quote estimator</strong></li>
-              <li><strong>Photo gallery</strong></li>
-              <li><strong>Google Maps/reviews section</strong></li>
-              <li><strong>Local SEO setup</strong></li>
-            </ul>
-            <button type="button" class="btn-tier" onclick="choosePackage('Growth ($350 - Most Popular)')">Choose Growth ↓</button>
-          </div>
-
-          <div class="tier-box">
-            <div class="tier-top">
-              <h4>Pro Lead-Gen Package</h4>
-              <div class="big-price">$550</div>
-              <p>A full authority build designed to bring in qualified jobs.</p>
-            </div>
-            <ul class="plain-list">
-              <li><strong>Multi-section authority build</strong></li>
-              <li><strong>Advanced custom job-quote intake form</strong></li>
-              <li><strong>Before/after photo showcase</strong></li>
-              <li><strong>Google Business Profile optimization</strong></li>
-              <li><strong>Priority turnaround</strong></li>
-            </ul>
-            <button type="button" class="btn-tier" onclick="choosePackage('Pro Lead-Gen ($550)')">Choose Pro ↓</button>
-          </div>
-        </div>
-
-        <div class="maint-banner">
-          <div>
-            <h4>How Do Website Updates Work After Launch?</h4>
-            <p>Want to swap out photos, update your prices, or change a phone number later? You can choose a simple monthly plan or just pay by the hour whenever you need something changed.</p>
-          </div>
-          <div class="maint-cards">
-            <div class="m-card">
-              <strong>Option A: $40 / Month Plan</strong>
-              <span>Covers small routine tweaks (new photos, price changes, text edits). Includes up to <b>1 hour of work per session</b>, max <b>2 sessions a week</b>, up to <b>6 sessions a month</b>. If a session goes over 1 hour, extra time is $35/hr.</span>
-            </div>
-            <div class="m-card">
-              <strong>Option B: $35 / Hour As-Needed</strong>
-              <span>Don't want a monthly plan? Pay $0 a month and simply reach out whenever you want an update made for a flat $35/hour rate.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 3: WHY LOCAL BUSINESSES SWITCH -->
-      <section id="why-sec">
-        <div class="section-header">
-          <span class="eyebrow">Why It Works</span>
-          <h3>Why Local Businesses Switch to Us</h3>
-          <p>Results first, tech talk never.</p>
-        </div>
-        <div class="roi-grid">
-          <div class="roi-card">
-            <div class="roi-icon">📱</div>
-            <h4>Built for Mobile Thumbs</h4>
-            <p>Over 80% of local customers search on their phones. Every site includes sticky Click-to-Call and Click-to-Text buttons so customers reach you in one tap.</p>
-          </div>
-          <div class="roi-card">
-            <div class="roi-icon">🎯</div>
-            <h4>Automatic Quote Filtering</h4>
-            <p>Stop playing phone tag with tire-kickers. Custom intake forms collect the customer's job details, location, and service needs before you even call them back.</p>
-          </div>
-          <div class="roi-card">
-            <div class="roi-icon">⚡</div>
-            <h4>Live in 5–7 Days</h4>
-            <p>No 2-month agency delays. You send your basic info, I build a live preview you can test on your phone, and we launch within a week.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 4: 60-SECOND FREE PREVIEW FORM -->
-      <section id="preview-sec">
-        <div class="section-header" style="text-align: center;">
-          <span class="eyebrow">Step 3 • 60-Second Free Preview</span>
-          <h3>Get Your Free Preview / Quote</h3>
-          <p style="margin-left: auto; margin-right: auto;">Four quick fields. I'll text or call you back with your live preview.</p>
-        </div>
-
-        <div class="preview-wrap">
           <div class="panel-card">
             <form class="intake-form"
                   name="client-intake"
@@ -1379,22 +1346,22 @@
               <input type="hidden" name="Interested_Style" id="hiddenStyle" value="" />
 
               <div class="f-group">
-                <label for="clientName">Your Name & Business Name *</label>
+                <label for="clientName">Your name and business *</label>
                 <input type="text" name="Name_and_Business" id="clientName" placeholder="e.g., John Smith — Smith Concrete" required />
               </div>
 
               <div class="f-group">
-                <label for="clientPhone">Best Phone Number to Text/Call *</label>
+                <label for="clientPhone">Best number to text or call *</label>
                 <input type="tel" name="Phone" id="clientPhone" placeholder="(601) 555-0199" required />
               </div>
 
               <div class="f-group">
-                <label for="clientJob">What Does Your Business Do? *</label>
+                <label for="clientJob">What does your business do? *</label>
                 <input type="text" name="Business_Type" id="clientJob" placeholder="e.g., Concrete, Lawn Care, Pressure Washing" required />
               </div>
 
               <div class="f-group">
-                <label for="packageSelect">Which Package Are You Interested In?</label>
+                <label for="packageSelect">Which package sounds closest?</label>
                 <select name="Package_Interest" id="packageSelect">
                   <option value="Starter ($250)">Starter ($250)</option>
                   <option value="Growth ($350 - Most Popular)" selected>Growth ($350 - Most Popular)</option>
@@ -1404,21 +1371,21 @@
               </div>
 
               <div class="submit-area">
-                <button type="submit" class="btn-submit-main" id="submitBtn">Get My Free Preview →</button>
+                <button type="submit" class="btn-submit-main" id="submitBtn">Send it to Drew →</button>
                 <div class="form-status" id="formStatus">Something went wrong sending your form. Please try again.</div>
                 <div class="helper-note" style="font-size: 11.5px; color: var(--muted);">
-                  No spam, no obligation. Your info goes straight to Drew Cox.
+                  No spam and no obligation. This goes straight to me, Drew.
                 </div>
               </div>
             </form>
           </div>
         </div>
       </section>
-    </div>
+    </main>
 
-    <footer class="site-footer">
-      <div>© Drew Cox Web Design • McComb & South Mississippi</div>
-      <button type="button" class="footer-link" onclick="openOnboarding()">Already a Client? Complete Your Design Onboarding</button>
+    <footer class="hm-footer">
+      <div>&copy; Drew Cox Web Design &middot; McComb and South Mississippi</div>
+      <button type="button" class="footer-link" onclick="openOnboarding()">Already a client? Complete your design onboarding</button>
     </footer>
   </div>
 
