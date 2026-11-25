@@ -532,6 +532,7 @@
     .direct a:first-child .ico { background: var(--rust); color: #FFF8EF; }
     .direct small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); line-height: 1.3; }
     .direct strong { display: block; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; }
+    .direct strong.email { font-size: 16px; word-break: break-all; }
     .direct .go { margin-left: auto; color: var(--ink-3); transition: transform .3s var(--ease), color .3s; }
     .direct a:hover .go { transform: translateX(4px); color: var(--rust); }
 
@@ -1125,6 +1126,11 @@
               <span><small>Or give me a call</small><strong data-phone="show">(601) 996-9179</strong></span>
               <span class="go" aria-hidden="true">&rarr;</span>
             </a>
+            <a href="mailto:drewcox9179@gmail.com">
+              <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
+              <span><small>Prefer email?</small><strong class="email">drewcox9179@gmail.com</strong></span>
+              <span class="go" aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
 
@@ -1171,7 +1177,7 @@
 
             <div class="submit-area">
               <button type="submit" class="btn btn-primary btn-block btn-submit-main" id="submitBtn">Send it to Drew <span class="arr" aria-hidden="true">&rarr;</span></button>
-              <div class="form-status" id="formStatus" role="alert">Something went wrong sending your form. Please try again, or text me at (601) 996-9179.</div>
+              <div class="form-status" id="formStatus" role="alert">Something went wrong sending your form. Please try again, text me at (601) 996-9179, or email <a href="mailto:drewcox9179@gmail.com">drewcox9179@gmail.com</a>.</div>
               <div class="helper-note">No spam and no obligation. This goes straight to me, Drew.</div>
             </div>
           </form>
@@ -1211,6 +1217,7 @@
           <ul>
             <li><a data-phone="sms" href="sms:+16019969179">Text (601) 996-9179</a></li>
             <li><a data-phone="tel" href="tel:+16019969179">Call (601) 996-9179</a></li>
+            <li><a href="mailto:drewcox9179@gmail.com">drewcox9179@gmail.com</a></li>
             <li><a href="#preview-sec">Get a free preview</a></li>
           </ul>
         </div>
