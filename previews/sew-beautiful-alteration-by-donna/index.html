@@ -26,7 +26,10 @@
   },
   "areaServed": "Hattiesburg, MS",
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "17:30"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday"], "opens": "10:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "13:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "12:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "13:00", "closes": "16:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "14:00", "closes": "16:00"}
   ],
   "sameAs": ["https://www.facebook.com/people/Sew-Beautiful-Alterations-by-Donna/100063058189510/"]
@@ -55,6 +58,7 @@
       <p class="eyebrow">West Hattiesburg, Mississippi</p>
       <h1>Bridal alterations &amp; fine tailoring in Hattiesburg</h1>
       <p class="lede">Bridal wear, formal gowns, casual clothes and jeans with the original hem, fitted to the person wearing them. <a href="tel:+16018187342">Call</a> or <a href="sms:+16018187342">text</a> Donna to book an appointment.</p>
+      <p class="appt-badge">By Appointment &middot; Call or Text to Book</p>
       <div class="actions">
         <a class="btn btn-solid" href="tel:+16018187342">Call (601) 818-7342</a>
         <a class="btn btn-line" href="#fitting">Request a fitting</a>
@@ -92,10 +96,11 @@
         </article>
         <article class="service">
           <h3>Casual clothes</h3>
-          <p>Everyday pieces taken in, let out or shortened so they fit the way you wear them.</p>
+          <p>Everyday pieces taken in, let out or shortened so they fit the way you wear them, plus military uniforms and mending.</p>
           <ul class="pills">
             <li>Pinned for exact quote</li>
             <li>Taken in or let out</li>
+            <li>Military uniforms &amp; mending</li>
             <li>Hemmed to length</li>
           </ul>
         </article>
@@ -164,16 +169,19 @@
       <h2 class="quotes-title">What customers say</h2>
       <div class="quote-grid">
         <blockquote class="quote-card">
-          <p>&ldquo;Donna did an exceptional job on my wedding dress! Her attention to detail and craftsmanship were truly impressive... The fit was flawless, and she used high-quality materials that made the dress both comfortable and stunning.&rdquo;</p>
-          <footer>Bride, Google Review</footer>
+          <div class="qhead"><span class="qtag">Bridal &amp; Events</span><span class="qstars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <p>&ldquo;I have been going to Donna for years and am always so blown away by not only her prices, friendliness and handiwork but also how quickly she completes her alterations! I had 3 outfits that needed to be altered for a rehearsal, bridal brunch and a wedding. All 3 were completed the same week I dropped them off!&rdquo;</p>
+          <footer>Google Review</footer>
         </blockquote>
         <blockquote class="quote-card">
-          <p>&ldquo;My daughter has taken numerous high dollar gowns to her and they have come out nothing but perfect. Donna is extremely professional and accommodating in every way. We have and will continue to use her services for all our alteration needs.&rdquo;</p>
-          <footer>Repeat Customer, Google Review</footer>
+          <div class="qhead"><span class="qtag">Formal Gowns &amp; Uniforms</span><span class="qstars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <p>&ldquo;We are a LONG time military family so we ALWAYS have mending/alterations to uniforms that need done. However that is not all Donna does, my daughter has taken numerous high dollar gowns to her and they have come out nothing but perfect. Donna is extremely professional and accommodating in every way.&rdquo;</p>
+          <footer>Google Review</footer>
         </blockquote>
         <blockquote class="quote-card">
-          <p>&ldquo;Definitely will be going back for any alterations! She is such a sweet lady that provides the best deal for you! She saved me $80...&rdquo;</p>
-          <footer>Alyssa B., Google Review</footer>
+          <div class="qhead"><span class="qtag">Quick Turnaround</span><span class="qstars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <p>&ldquo;I needed a zipper alteration urgently and she graciously agreed to make the alteration within 2 days for a very reasonable price, despite having several bridal gowns to alter. Donna is very nice and professional. She will be my go-to in the future for alterations.&rdquo;</p>
+          <footer>Google Review</footer>
         </blockquote>
       </div>
     </div>
@@ -183,6 +191,7 @@
     <div class="wrap fitting-grid">
       <div class="contact" id="location">
         <h2>Visit or call</h2>
+        <p class="appt-badge">By Appointment &middot; Call or Text to Book</p>
         <dl>
           <dt>Location</dt>
           <dd>33 Pecan Hills Drive<br>West Hattiesburg, MS</dd>
@@ -191,11 +200,15 @@
           <dt>Hours</dt>
           <dd>
             <table class="hours">
-              <tr><th scope="row">Monday to Friday</th><td>10:00 AM to 5:30 PM</td></tr>
-              <tr><th scope="row">Saturday</th><td>Closed</td></tr>
-              <tr><th scope="row">Sunday</th><td>2:00 PM to 4:00 PM</td></tr>
+              <tr><th scope="row">Mon, Tue, Thu</th><td>10:00 AM to 5:00 PM</td></tr>
+              <tr><th scope="row">Wed</th><td>1:00 PM to 5:00 PM</td></tr>
+              <tr><th scope="row">Fri</th><td>12:00 PM to 5:00 PM</td></tr>
+              <tr><th scope="row">Sat</th><td>1:00 PM to 4:00 PM</td></tr>
+              <tr><th scope="row">Sun</th><td>2:00 PM to 4:00 PM</td></tr>
             </table>
           </dd>
+          <dt>Good to know</dt>
+          <dd><ul class="pills pills-info"><li>Women-owned business</li><li>Wheelchair-accessible parking &amp; entrance</li></ul></dd>
           <dt>Follow</dt>
           <dd><a href="https://www.facebook.com/people/Sew-Beautiful-Alterations-by-Donna/100063058189510/" rel="noopener">Sew Beautiful Alterations by Donna on Facebook</a></dd>
         </dl>

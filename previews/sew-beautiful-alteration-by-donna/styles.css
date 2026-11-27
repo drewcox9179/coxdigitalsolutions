@@ -209,6 +209,14 @@ footer a { color: #F6D6E1; }
 .map-card iframe { display: block; width: 100%; height: 220px; border: 0; }
 .map-card .btn { width: calc(100% - 24px); margin: 12px; }
 
+.qhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.qtag { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--blush); border: 1px solid var(--line); font-size: .8rem; font-weight: 700; color: var(--plum); }
+.qstars { color: var(--berry); letter-spacing: 2px; font-size: .95rem; }
+.appt-badge {
+  display: inline-block; margin: 0 0 18px; padding: 8px 16px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--berry); color: var(--berry); font-size: .9rem; font-weight: 500;
+}
+.pills-info { margin-top: 6px; }
 .quotes-title { margin: 48px 0 18px; }
 .quote-grid { display: grid; gap: 14px; }
 .quote-card { margin: 0; padding: 22px 20px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
